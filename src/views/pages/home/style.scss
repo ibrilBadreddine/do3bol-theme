@@ -1,0 +1,13 @@
+.home-page {
+  .slider-area {
+    margin: 1em 5%;
+  }
+}
+
+@media (max-width: 766px) {
+  .home-page {
+    .slider-area {
+      margin: calc(1.5em / 2);
+    }
+  }
+}
