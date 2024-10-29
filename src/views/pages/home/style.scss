@@ -1,6 +1,10 @@
 .home-page {
+  display: grid;
   .slider-area {
     margin: 1em 5%;
+  }
+  .collections-area {
+    margin: 5em 10%;
   }
 }
 
@@ -8,6 +12,9 @@
   .home-page {
     .slider-area {
       margin: calc(1.5em / 2);
+    }
+    .collections-area {
+      margin: 3em 1.5em;
     }
   }
 }

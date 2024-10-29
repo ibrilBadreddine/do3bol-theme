@@ -1,5 +1,6 @@
 import "./style.scss";
 import Slider from "@/views/components/sections/slider";
+import Collections from "@/views/components/sections/collections";
 
 export default function Home() {
   return (
@@ -13,7 +14,9 @@ export default function Home() {
           arrows
         />
       </section>
-      <section className="hello" style={{ height: "300px" }}></section>
+      <section className="collections-area">
+        <Collections />
+      </section>
     </div>
   );
 }
