@@ -48,9 +48,11 @@ export default function Header() {
           <div className="menu-overlay overlay" />
         </div>
       </div>
-      <Link to="/" className="logo-box">
-        <img src={StoreLogo} alt="store logo" />
-      </Link>
+      <div className="logo-box">
+        <Link to="/">
+          <img src={StoreLogo} alt="store logo" />
+        </Link>
+      </div>
       <div className="actions-box">
         <div className="search-bar" data-hidden={!search}>
           <Icon name="search" />
