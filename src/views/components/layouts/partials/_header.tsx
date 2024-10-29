@@ -16,7 +16,10 @@ export default function Header() {
         <Link to="/">Kids</Link>
       </div>
       <div className="header-mobile" data-hidden={!menu}>
-        <button onClick={() => setMenu(true)} className="menu-btn icon">
+        <button
+          onClick={() => setMenu(true)}
+          className="menu-btn icon"
+          aria-label="menu">
           <Icon name="burger_menu" size={20} />
         </button>
         <div className="menu-container">
