@@ -95,3 +95,27 @@ textarea {
   z-index: 99;
   transition: 0.3s;
 }
+
+// HEADLINES
+.section-headlines {
+  text-align: center;
+  h1 {
+    font-size: 30px;
+  }
+  p {
+    margin-top: 0.5em;
+    font-size: 14px;
+    color: var(--gray-500);
+  }
+}
+
+@media (max-width: 766px) {
+  .section-headlines {
+    h1 {
+      font-size: 25px;
+    }
+    p {
+      font-size: 13px;
+    }
+  }
+}
