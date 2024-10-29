@@ -1,0 +1,26 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+}
+
+a,
+button {
+  text-decoration: none;
+  font-size: 14px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  color: var(--base-black);
+  transition: var(--transition-duration);
+}
+
+input,
+textarea,
+select {
+  border: none;
+  outline: none;
+}

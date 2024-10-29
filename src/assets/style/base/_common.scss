@@ -1,0 +1,82 @@
+// BUTTON
+button {
+  padding: 12px 25px;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  &:hover:is(.primary, .destructive, .loading, .with-icon) {
+    opacity: 0.8;
+  }
+  &:hover:is(.outline, .ghost, .icon) {
+    background-color: var(--gray-50);
+  }
+  &:is(.sm) {
+    border-radius: var(--radius-sm);
+  }
+  &:is(.md) {
+    border-radius: var(--radius-md);
+  }
+  &:is(.lg) {
+    border-radius: var(--radius-lg);
+  }
+  &:is(.xl) {
+    border-radius: var(--radius-xl);
+  }
+  &.primary {
+    background-color: var(--brand-500);
+    color: var(--base-white);
+  }
+  &.secondary {
+    background-color: var(--gray-50);
+    color: var(--base-black);
+    &:hover {
+      background-color: rgb(240, 240, 240);
+    }
+  }
+  &.outline {
+    background-color: transparent;
+    color: var(--base-black);
+    border: 1px solid gainsboro;
+  }
+  &.destructive {
+    background-color: var(--error-500);
+    color: var(--base-white);
+  }
+  &.ghost {
+    background-color: transparent;
+  }
+  &.link {
+    background-color: transparent;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  &.icon {
+    padding: 12px;
+    background-color: transparent;
+    color: var(--base-black);
+    border: 1px solid gainsboro;
+  }
+  &.with-icon {
+    padding: 12px 20px;
+    background-color: var(--brand-500);
+    color: var(--base-white);
+  }
+}
+
+// INPUT
+input {
+  background-color: var(--base-white);
+  color: var(--base-black);
+  border-radius: var(--radius-sm);
+  padding: 12px 15px;
+  width: -webkit-fill-available;
+  box-shadow: var(--shadow-dark-sm);
+  &:focus {
+    box-shadow: var(--shadow-dark-focus-sm);
+  }
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}

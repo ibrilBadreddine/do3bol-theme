@@ -1,0 +1,48 @@
+:root {
+  // Global Colors
+  --brand-500: #6729ff;
+  --brand-50: #f0ebff;
+  --base-white: #fff;
+  --base-black: #1d1d1b;
+  --gray-500: #535151;
+  --gray-50: #f3f3f3;
+  // Toast Colors
+  --success-50: #d0f0e1;
+  --success-500: #24834a;
+  --warning-50: rgba(255, 170, 0, 0.3);
+  --warning-500: rgb(255, 151, 15);
+  --error-50: rgb(255 224 224);
+  --error-500: rgb(251, 86, 86);
+  --info-50: rgb(221 238 253);
+  --info-500: rgb(32, 133, 215);
+  // Radius
+  --radius-sm: 0.5em;
+  --radius-md: 0.7em;
+  --radius-lg: 1em;
+  --radius-xl: 1.5em;
+  --radius-2xl: 2em;
+  --radius-circle: 50%;
+  // Transition
+  --transition-duration: 0.4s;
+  // Shadow
+  --shadow-dark-sm: rgba(0, 0, 0, 0.03) 0px 3px 14px 0px,
+    rgba(0, 0, 0, 0.1) 0px 0px 0px 1px;
+  --shadow-dark-focus-sm: rgba(0, 0, 0, 0.03) 0px 3px 14px 0px,
+    var(--gray-500) 0px 0px 0px 1px;
+  --shadow-brand-focus-sm: rgba(0, 0, 0, 0.03) 0px 3px 14px 0px,
+    var(--brand-500) 0px 0px 0px 1px;
+  --shadow-success-focus-sm: rgba(0, 0, 0, 0.03) 0px 3px 14px 0px,
+    #24834a56 0px 0px 0px 1px;
+  --shadow-info-focus-sm: rgba(0, 0, 0, 0.03) 0px 3px 14px 0px,
+    rgba(32, 133, 215, 0.34) 0px 0px 0px 1px;
+  --shadow-warning-focus-sm: rgba(0, 0, 0, 0.03) 0px 3px 14px 0px,
+    rgba(255, 151, 15, 0.327) 0px 0px 0px 1px;
+  --shadow-error-focus-sm: rgba(0, 0, 0, 0.03) 0px 3px 14px 0px,
+    rgba(251, 86, 86, 0.327) 0px 0px 0px 1px;
+  --shadow-dark-md: rgba(0, 0, 0, 0.03) 0px 3px 14px 0px,
+    rgba(0, 0, 0, 0.1) 0px 0px 0px 2px;
+  --shadow-dark-focus-md: rgba(0, 0, 0, 0.03) 0px 3px 14px 0px,
+    var(--gray-500) 0px 0px 0px 2px;
+  --shadow-brand-focus-md: rgba(0, 0, 0, 0.03) 0px 3px 14px 0px,
+    var(--brand-500) 0px 0px 0px 2px;
+}
