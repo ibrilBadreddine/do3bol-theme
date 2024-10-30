@@ -4,6 +4,7 @@ import Collections from "@/views/components/sections/collections";
 import ProductsList from "@/views/components/sections/products/list";
 import ProductReviews from "@/views/components/sections/products/reviews";
 import Box from "@/views/components/sections/box";
+import Content from "@/views/components/sections/content";
 
 export default function Home() {
   return (
@@ -18,8 +19,9 @@ export default function Home() {
         />
       </section>
       <section className="core-area">
-        <Box />
+        {/* <Box /> */}
         <Collections />
+        <Content />
         <ProductsList />
         <ProductReviews />
       </section>
