@@ -16,16 +16,24 @@ export default function Collections() {
       </div>
       <div className="collections-cards">
         <Link to="/" className="col-card">
-          <img src={Collection1} alt="Man" className="col-picture" />
-          <h4 className="col-name">Man</h4>
+          <img src={Collection1} alt="Man Collection" className="col-picture" />
+          <p className="col-name">Man</p>
         </Link>
         <Link to="/" className="col-card">
-          <img src={Collection2} alt="Woman" className="col-picture" />
-          <h4 className="col-name">Woman</h4>
+          <img
+            src={Collection2}
+            alt="Woman Collection"
+            className="col-picture"
+          />
+          <p className="col-name">Woman</p>
         </Link>
         <Link to="/" className="col-card">
-          <img src={Collection3} alt="Kids" className="col-picture" />
-          <h4 className="col-name">Kids</h4>
+          <img
+            src={Collection3}
+            alt="Kids Collection"
+            className="col-picture"
+          />
+          <p className="col-name">Kids</p>
         </Link>
       </div>
     </div>

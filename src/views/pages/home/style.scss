@@ -3,8 +3,9 @@
   .slider-area {
     margin: 1em 5%;
   }
-  .collections-area {
-    margin: 5em 10%;
+  .collections-area,
+  .products-list-area {
+    margin: 3em 10%;
   }
 }
 
@@ -13,7 +14,8 @@
     .slider-area {
       margin: calc(1.5em / 2);
     }
-    .collections-area {
+    .collections-area,
+    .products-list-area {
       margin: 3em 1.5em;
     }
   }

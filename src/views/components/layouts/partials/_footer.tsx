@@ -12,7 +12,7 @@ export default function Footer() {
         </div>
         <div className="links-box">
           <div className="navigation">
-            <h4>Terms and conditions</h4>
+            <p>Terms and conditions</p>
             <div className="links">
               <Link to="/">Terms & Conditions</Link>
               <Link to="/">Return Policy</Link>
@@ -20,7 +20,7 @@ export default function Footer() {
             </div>
           </div>
           <div className="navigation">
-            <h4>About the store</h4>
+            <p>About the store</p>
             <div className="links">
               <Link to="/">About us</Link>
               <Link to="/">How to pay</Link>
@@ -28,7 +28,7 @@ export default function Footer() {
             </div>
           </div>
           <div className="navigation">
-            <h4>Contact</h4>
+            <p>Contact</p>
             <div className="links">
               <Link to="/">Contact us</Link>
               <Link to="/">FAQ</Link>
