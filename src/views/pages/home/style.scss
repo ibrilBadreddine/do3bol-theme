@@ -3,10 +3,10 @@
   .slider-area {
     margin: 1em 5%;
   }
-  .collections-area,
-  .products-list-area,
-  .product-reviews-area {
-    margin: 3em 10%;
+  .core-area {
+    margin: 5em 10%;
+    display: grid;
+    gap: 8em;
   }
 }
 
@@ -15,9 +15,7 @@
     .slider-area {
       margin: calc(1.5em / 2);
     }
-    .collections-area,
-    .products-list-area,
-    .product-reviews-area {
+    .core-area {
       margin: 3em 1.5em;
     }
   }
