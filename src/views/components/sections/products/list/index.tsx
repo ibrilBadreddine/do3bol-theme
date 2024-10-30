@@ -1,4 +1,4 @@
-import "./products.style.scss";
+import "./prod-list.style.scss";
 import { Link } from "react-router-dom";
 import Product1 from "@/assets/images/product-1.jpg";
 import Product2 from "@/assets/images/product-2.jpg";

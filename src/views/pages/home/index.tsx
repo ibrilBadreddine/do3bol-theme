@@ -2,6 +2,7 @@ import "./style.scss";
 import Slider from "@/views/components/sections/slider";
 import Collections from "@/views/components/sections/collections";
 import ProductsList from "@/views/components/sections/products/list";
+import ProductReviews from "@/views/components/sections/products/reviews";
 
 export default function Home() {
   return (
@@ -20,6 +21,9 @@ export default function Home() {
       </section>
       <section className="products-list-area">
         <ProductsList />
+      </section>
+      <section className="product-reviews-area">
+        <ProductReviews />
       </section>
     </div>
   );
