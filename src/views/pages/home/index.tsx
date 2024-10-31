@@ -19,7 +19,7 @@ export default function Home() {
         />
       </section>
       <section className="core-area">
-        {/* <Box /> */}
+        <Box />
         <Collections />
         <Content />
         <ProductsList />

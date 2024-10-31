@@ -1,0 +1,94 @@
+.search-page {
+  min-height: 80vh;
+  margin: 2em 10%;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  // Navigation
+  .navigation-area {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    margin-bottom: 2em;
+    a {
+      border-radius: var(--radius-sm);
+      &:hover {
+        text-decoration: underline;
+      }
+      &:first-child {
+        opacity: 0.5;
+      }
+    }
+  }
+  // Browsing
+  .browsing-area {
+    display: grid;
+    grid-template-columns: 300px auto;
+    height: 100%;
+    // Filter
+    .filter-box {
+      border-radius: var(--radius-md) 0 0 var(--radius-md);
+      border: 1px solid var(--gray-50);
+      .filter-head {
+        padding: 1.5em 2em;
+        border-bottom: 1px solid var(--gray-50);
+        display: flex;
+        align-items: center;
+        gap: 0.5em;
+      }
+      .filter-core {
+        padding: 1.5em 2em;
+        display: flex;
+        flex-direction: column;
+        gap: 2em;
+        .select-filter {
+          display: grid;
+          gap: 0.7em;
+          span {
+            font-size: 14px;
+            color: var(--gray-500);
+          }
+          .options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.7em;
+            .opt {
+              padding: 5px 15px;
+              font-size: 13px;
+              svg {
+                display: none;
+              }
+              &:first-child {
+                background-color: var(--base-black);
+                border-color: var(--base-black);
+                color: var(--base-white);
+                svg {
+                  display: block;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .result-box {
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      border: 1px solid var(--gray-50);
+      border-left: 0px;
+      .result-head {
+        padding: 0.88em 2em;
+        border-bottom: 1px solid var(--gray-50);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .result-count {
+          font-size: 14px;
+          color: var(--gray-500);
+        }
+        .result-styles {
+          display: flex;
+          gap: 0.5em;
+        }
+      }
+    }
+  }
+}
