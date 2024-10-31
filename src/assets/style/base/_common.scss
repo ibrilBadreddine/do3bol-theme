@@ -63,6 +63,10 @@ button {
     background-color: var(--base-black);
     color: var(--base-white);
   }
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
 }
 
 // INPUT
