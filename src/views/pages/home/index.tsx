@@ -22,7 +22,10 @@ export default function Home() {
         <Box />
         <Collections />
         <Content />
-        <ProductsList />
+        <ProductsList
+          title="New arrivals"
+          subtitle="Our new arrivals are built to withstand your activities while keeping you looking your best!"
+        />
         <ProductReviews />
       </section>
     </div>

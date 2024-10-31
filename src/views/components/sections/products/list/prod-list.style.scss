@@ -3,8 +3,8 @@
   gap: 3em;
   .products-cards {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 2em;
+    grid-template-columns: repeat(var(--columns), 1fr);
+    gap: calc(var(--gap) * 1em);
     .prod-card {
       height: 400px;
       position: relative;
@@ -20,7 +20,7 @@
         opacity: 0;
         transition: var(--transition-duration);
       }
-      &:hover:is(.style-1 .prod-card) {
+      &:hover:is(.default .prod-card) {
         &::before {
           opacity: 1;
         }
@@ -61,7 +61,7 @@
         }
       }
     }
-    &:is(.style-2) {
+    &:is(.with-button) {
       .prod-card {
         height: auto;
         box-shadow: var(--shadow-dark-sm);
