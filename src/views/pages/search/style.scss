@@ -79,6 +79,42 @@
         }
       }
     }
+    // Mobile Filter
+    .filter-box-mobile {
+      display: grid;
+      gap: 1.5em;
+      .filter-tab {
+        display: grid;
+        gap: 0.8em;
+        label {
+          color: var(--gray-500);
+          font-size: 14px;
+        }
+        .options {
+          display: flex;
+          gap: 0.5em;
+          flex-wrap: wrap;
+          button {
+            font-size: 13px;
+            padding: 7px 12px;
+            &:first-child {
+              border: 1px solid var(--base-black);
+              background-color: var(--base-black);
+              color: var(--base-white);
+            }
+          }
+        }
+      }
+      .filter-actions {
+        margin-top: 1em;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.5em;
+        button {
+          justify-content: center;
+        }
+      }
+    }
     .result-box {
       padding: 1.5em;
     }
@@ -92,6 +128,21 @@
     .filter-sort {
       justify-content: center;
       grid-column: 3 / 1;
+    }
+  }
+}
+
+@media (max-width: 766px) {
+  .search-page {
+    margin: 2em 5%;
+    .browsing-area .filter-box {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .filter-options,
+      .filter-sort {
+        display: none;
+      }
     }
   }
 }
