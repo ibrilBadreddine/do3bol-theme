@@ -67,14 +67,14 @@ export default function Content() {
             </div>
           </div>
         </div>
-        <form className="variant check-out-form">
+        {/* <form className="variant check-out-form">
           <label className="label">Customer information:</label>
           <div className="inputs">
             <input type="text" placeholder="Full name" />
             <input type="number" placeholder="Phone" />
             <input type="text" placeholder="Address" />
           </div>
-        </form>
+        </form> */}
         {/* <div className="variant var-radio">
           <label className="label">Fit:</label>
           <div className="options">

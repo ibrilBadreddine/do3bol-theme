@@ -1,11 +1,14 @@
 .product-page {
   min-height: 80vh;
   margin: 2em 10%;
+  display: grid;
+  gap: 4em;
   .product-area {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 4em;
     position: relative;
+    // Content
     .product-content {
       display: grid;
       gap: 1.5em;
@@ -135,7 +138,9 @@
               span {
                 font-weight: 550;
               }
-              &:nth-child(1), &:nth-child(2), &:nth-child(3) {
+              &:nth-child(1),
+              &:nth-child(2),
+              &:nth-child(3) {
                 border-right: 1px solid var(--gray-50);
               }
             }
@@ -172,6 +177,7 @@
       }
     }
   }
+  // Media
   .product-media {
     top: 1.5em;
     position: sticky;
@@ -232,7 +238,92 @@
         &[data-active-image$="true"]::before {
           opacity: 1;
         }
+        &[data-active-image$="true"] {
+          box-shadow: var(--shadow-dark-focus-sm);
+        }
       }
+    }
+  }
+  // Reviews
+  .reviews-area {
+    display: grid;
+    gap: 2em;
+    .reviews-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      button:is(.icon) {
+        display: none;
+      }
+    }
+  }
+  // Express Checkout
+  .express-checkout-area {
+    display: none;
+    .check-out-form {
+      display: grid;
+      gap: 1em;
+      button {
+        justify-content: center;
+      }
+    }
+    .add-to-cart {
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      width: -webkit-fill-available;
+      padding: 1em;
+      border-top: 1px solid var(--gray-50);
+      background-color: var(--base-white);
+      .add-btn {
+        text-transform: uppercase;
+        width: 100%;
+        justify-content: center;
+      }
+    }
+  }
+}
+
+@media (max-width: 1250px) {
+  .product-page .product-area {
+    grid-template-columns: 0.55fr 0.45fr;
+    .product-media {
+      .media-preview {
+        height: 450px;
+      }
+      .media-options button {
+        height: 80px;
+      }
+    }
+  }
+}
+
+@media (max-width: 766px) {
+  .product-page {
+    margin: 2em 5%;
+    .product-area {
+      gap: 2em;
+      grid-template-columns: 1fr;
+      .product-media {
+        position: static;
+        .media-preview {
+          height: 400px;
+        }
+        .media-options button {
+          height: 70px;
+        }
+      }
+    }
+    .reviews-area .reviews-head {
+      button:is(.primary) {
+        display: none;
+      }
+      button:is(.icon) {
+        display: flex;
+      }
+    }
+    .express-checkout-area {
+      display: block;
     }
   }
 }

@@ -26,7 +26,10 @@ export default function Home() {
           title="New arrivals"
           subtitle="Our new arrivals are built to withstand your activities while keeping you looking your best!"
         />
-        <ProductReviews />
+        <ProductReviews
+          title="Real reviews, Real style"
+          subtitle="Customer reviews on the styles they can’t get enough of."
+        />
       </section>
     </div>
   );
