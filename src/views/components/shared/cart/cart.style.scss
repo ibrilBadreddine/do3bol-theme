@@ -1,0 +1,172 @@
+.cart-container {
+  .cart-box {
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    right: 0;
+    width: 50%;
+    translate: 0%;
+    height: 100vh;
+    border-radius: var(--radius-lg) 0 0 var(--radius-lg);
+    background-color: var(--base-white);
+    display: flex;
+    flex-direction: column;
+    transition: var(--transition-duration);
+    // Head
+    .cart-head {
+      padding: 1.2em 1.5em;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--gray-50);
+      .headline {
+        display: flex;
+        align-items: center;
+        gap: 0.5em;
+      }
+      button {
+        padding: 8px;
+      }
+    }
+    // Core
+    .cart-core {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+      .cart-items {
+        padding: 1.5em;
+        display: grid;
+        gap: 1em;
+        .items-note {
+          display: flex;
+          gap: 1em;
+          align-items: center;
+          padding: 1.5em;
+          font-size: 13px;
+          margin-bottom: 0.5em;
+          border-radius: var(--radius-md);
+          color: var(--gray-500);
+          background-color: var(--gray-50);
+          svg {
+            fill: var(--gray-500);
+          }
+        }
+        .cart-item {
+          display: flex;
+          align-items: end;
+          justify-content: space-between;
+          padding-bottom: 1em;
+          &:is(:not(:last-child)) {
+            border-bottom: 1px solid var(--gray-50);
+          }
+          .cart-detail {
+            display: flex;
+            gap: 1em;
+            .item-img {
+              width: 100px;
+              height: 100px;
+              object-fit: cover;
+              border-radius: var(--radius-md);
+              box-shadow: var(--shadow-dark-sm);
+            }
+            .item-info {
+              display: flex;
+              flex-direction: column;
+              justify-content: space-between;
+              .headlines {
+                display: grid;
+                gap: 3px;
+                p {
+                  font-size: 14px;
+                  display: -webkit-box;
+                  -webkit-line-clamp: 1;
+                  overflow: hidden;
+                  text-overflow: ellipsis;
+                  -webkit-box-orient: vertical;
+                }
+                span {
+                  font-weight: 550;
+                }
+              }
+              .quantity {
+                display: flex;
+                align-items: center;
+                gap: 1em;
+                font-size: 13px;
+                button {
+                  padding: 8px;
+                }
+              }
+            }
+          }
+        }
+        .item-action {
+          padding: 8px;
+          color: var(--gray-500);
+          &:hover {
+            color: var(--error-500);
+            background-color: var(--error-50);
+          }
+        }
+      }
+      .cart-info {
+        display: grid;
+        border-top: 1px solid var(--gray-50);
+        .total {
+          padding: 1em 1.5em;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          border-bottom: 1px solid var(--gray-50);
+          label {
+            color: var(--gray-500);
+            font-size: 14px;
+          }
+          .amount {
+            font-weight: 550;
+          }
+        }
+        .actions {
+          padding: 1em 1.5em;
+          display: grid;
+          gap: 1em;
+          border-bottom: 1px solid var(--gray-50);
+          button {
+            justify-content: center;
+          }
+        }
+      }
+    }
+  }
+}
+
+.cart-container[data-hidden$="true"] {
+  .cart-box {
+    translate: 100% 0;
+  }
+  .overlay {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+@media (max-width: 766px) {
+  .cart-container .cart-box {
+    width: 85%;
+    .cart-core .cart-items .cart-item .cart-detail {
+      .item-img {
+        width: 85px;
+        height: 85px;
+      }
+      .item-info .headlines {
+        p {
+          font-size: 13px;
+        }
+        span {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}

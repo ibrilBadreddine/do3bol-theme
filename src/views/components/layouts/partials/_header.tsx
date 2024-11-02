@@ -2,10 +2,12 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import StoreLogo from "@/assets/images/logo.png";
 import Icon from "@components/shared/icons";
+import Cart from "@/views/components/shared/cart";
 
 export default function Header() {
-  const [search, setSearch] = useState(false);
-  const [menu, setMenu] = useState(false);
+  const [search, setSearch] = useState<boolean>(false);
+  const [menu, setMenu] = useState<boolean>(false);
+  const [cart, setCart] = useState<boolean>(false);
 
   return (
     <header className="header-container">
@@ -64,11 +66,13 @@ export default function Header() {
         <button onClick={() => setSearch(!search)} className="icon search-btn">
           <Icon name={!search ? "search" : "close"} />
         </button>
-        <button className="icon cart-btn">
+        <button onClick={() => setCart(true)} className="icon cart-btn">
           <Icon name="cart" />
           <span>0 MAD</span>
         </button>
       </div>
+
+      <Cart isOpen={cart} setModal={setCart} />
     </header>
   );
 }
