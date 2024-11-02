@@ -51,3 +51,10 @@
     visibility: hidden;
   }
 }
+
+@media (max-height: 900px) {
+  .modal-box .modal-core {
+    overflow: scroll;
+    max-height: 50vh;
+  }
+}
