@@ -60,7 +60,7 @@
         gap: 1.5em;
         position: relative;
         width: fit-content;
-        span {
+        .total-amount {
           font-size: 12px;
           font-weight: 550;
           width: max-content;
@@ -72,6 +72,16 @@
           width: 1px;
           background-color: gainsboro;
           left: 40px;
+        }
+        .total-items {
+          position: absolute;
+          color: var(--base-white);
+          padding: 5px 8px;
+          font-size: 10px;
+          clip-path: circle();
+          background-color: var(--base-black);
+          top: -8px;
+          left: -8px;
         }
       }
     }
@@ -225,6 +235,12 @@
   .base-app {
     .header-container {
       padding: 1.5em;
+      .actions-box .cart-btn {
+        .total-amount,
+        &::before {
+          display: none;
+        }
+      }
     }
     .footer-container {
       .footer-core {

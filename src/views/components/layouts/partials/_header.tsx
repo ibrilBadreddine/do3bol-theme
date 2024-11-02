@@ -67,8 +67,9 @@ export default function Header() {
           <Icon name={!search ? "search" : "close"} />
         </button>
         <button onClick={() => setCart(true)} className="icon cart-btn">
+          <span className="total-items">4</span>
           <Icon name="cart" />
-          <span>0 MAD</span>
+          <span className="total-amount">0 MAD</span>
         </button>
       </div>
 
