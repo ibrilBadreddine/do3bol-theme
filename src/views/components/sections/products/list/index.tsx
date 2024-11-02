@@ -4,9 +4,9 @@ import Product1 from "@/assets/images/product-1.jpg";
 import Product2 from "@/assets/images/product-2.jpg";
 import Product3 from "@/assets/images/product-3.jpg";
 import Product4 from "@/assets/images/product-4.jpg";
-import type { ProductDefinition } from "../products.type";
+import type { ListDefinition } from "../products.type";
 
-const ProductsList: React.FC<ProductDefinition> = ({
+const ProductsList: React.FC<ListDefinition> = ({
   title,
   subtitle,
   style = "default",

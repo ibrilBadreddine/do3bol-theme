@@ -1,4 +1,4 @@
-export interface ProductDefinition {
+export interface ListDefinition {
   title?: string;
   subtitle?: string;
   columns?: number;
@@ -8,3 +8,10 @@ export interface ProductDefinition {
 }
 
 type ProductStyles = "default" | "with-button";
+
+export interface ReviewDefinition {
+  title?: string;
+  subtitle?: string;
+  columns?: number;
+  gap?: number;
+}

@@ -3,8 +3,8 @@
   gap: 3em;
   .reviews-cards {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 2em;
+    grid-template-columns: repeat(var(--columns), 1fr);
+    gap: calc(var(--gap) * 1em);
     .review-card {
       background-color: var(--base-white);
       border: 1px solid var(--gray-50);

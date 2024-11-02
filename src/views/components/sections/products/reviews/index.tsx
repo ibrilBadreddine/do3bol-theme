@@ -1,7 +1,13 @@
 import "./prod-reviews.style.scss";
 import Icon from "@/views/components/shared/icons";
+import type { ReviewDefinition } from "../products.type";
 
-export default function ProductReviews() {
+const ProductsReviews: React.FC<ReviewDefinition> = ({
+  title,
+  subtitle,
+  columns = 4,
+  gap = 2,
+}) => {
   const REVIEWS = [
     {
       rating: 5,
@@ -31,11 +37,15 @@ export default function ProductReviews() {
 
   return (
     <div className="product-reviews-container">
-      <div className="section-headlines">
-        <h1>Real reviews, Real style</h1>
-        <p>Customer reviews on the styles they can’t get enough of.</p>
-      </div>
-      <div className="reviews-cards">
+      {title && (
+        <div className="section-headlines">
+          <h1>{title}</h1>
+          <p>{subtitle}</p>
+        </div>
+      )}
+      <div
+        className="reviews-cards"
+        style={{ "--columns": columns, "--gap": gap }}>
         {REVIEWS.map((review, i) => (
           <div key={i} className="review-card">
             <div className="review-rating">
@@ -59,4 +69,6 @@ export default function ProductReviews() {
       </div>
     </div>
   );
-}
+};
+
+export default ProductsReviews;
