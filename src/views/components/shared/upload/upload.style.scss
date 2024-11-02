@@ -1,0 +1,63 @@
+.upload-container {
+  display: grid;
+  gap: 1em;
+  .files-input {
+    padding: 3em 1em;
+    border: 1px dashed gainsboro;
+    border-radius: var(--radius-md);
+    position: relative;
+    .input-box {
+      display: grid;
+      justify-content: center;
+      text-align: center;
+      color: var(--gray-500);
+      .box-icon {
+        margin-bottom: 0.5em;
+      }
+      .box-title {
+        color: var(--base-black);
+        font-size: 15px;
+      }
+      .box-subtitle {
+        font-size: 13px;
+      }
+    }
+    input {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+    }
+  }
+  .files-output {
+    display: grid;
+    gap: 1em;
+    .output-box {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .box-preview {
+        display: flex;
+        align-items: center;
+        gap: 1em;
+        img {
+            object-fit: cover;
+          width: 60px;
+          height: 60px;
+          border-radius: var(--radius-sm);
+          box-shadow: var(--shadow-dark-sm);
+        }
+        .box-info {
+          display: grid;
+          gap: 3px;
+          span {
+            font-size: 14px;
+          }
+          p {
+            color: var(--gray-500);
+            font-size: 13px;
+          }
+        }
+      }
+    }
+  }
+}
