@@ -37,6 +37,9 @@
         font-size: 14px;
         color: var(--gray-500);
       }
+      .filter-btn {
+        display: none;
+      }
       .filter-options {
         display: flex;
         align-items: center;
@@ -142,6 +145,9 @@
       .filter-options,
       .filter-sort {
         display: none;
+      }
+      .filter-btn {
+        display: flex;
       }
     }
   }
