@@ -3,6 +3,7 @@ import Layout from "@components/layouts/base-layout";
 import Home from "@pages/home";
 import Search from "@/views/pages/search";
 import Product from "@/views/pages/product";
+import ThankYou from "@/views/pages/thank-you";
 
 export default function app() {
   const router = createBrowserRouter([
@@ -21,6 +22,10 @@ export default function app() {
         {
           path: "/product",
           element: <Product />,
+        },
+        {
+          path: "/thank-you",
+          element: <ThankYou />,
         },
       ],
     },
