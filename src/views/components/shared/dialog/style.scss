@@ -1,38 +1,54 @@
 .dialog-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  gap: 1.5em;
-  .dialog-icon {
+  .dialog-core {
     display: flex;
     align-items: center;
-    padding: 1em;
-    border-radius: var(--radius-md);
-    color: var(--error-500);
-    background-color: var(--error-50);
-    width: fit-content;
-  }
-  .dialog-content {
-    display: grid;
-    gap: 5px;
-    text-align: center;
-    h4 {
-      font-size: 17px;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1.5em;
+    .dialog-icon {
+      display: flex;
+      align-items: center;
+      padding: 1em;
+      border-radius: var(--radius-md);
+      color: var(--error-500);
+      background-color: var(--error-50);
+      width: fit-content;
     }
-    p {
-      font-size: 13px;
-      color: var(--gray-500);
-      padding: 0 10%;
+    .dialog-content {
+      display: grid;
+      gap: 5px;
+      text-align: center;
+      h4 {
+        font-size: 17px;
+      }
+      p {
+        font-size: 13px;
+        color: var(--gray-500);
+        padding: 0 10%;
+      }
+    }
+    .dialog-actions {
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.5em;
+      button {
+        justify-content: center;
+      }
     }
   }
-  .dialog-actions {
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.5em;
-    button {
-      justify-content: center;
+  .modal-sticky {
+    display: none;
+  }
+}
+
+@media (max-width: 766px) {
+  .dialog-container {
+    .modal-full {
+      display: none;
+    }
+    .modal-sticky {
+      display: initial;
     }
   }
 }

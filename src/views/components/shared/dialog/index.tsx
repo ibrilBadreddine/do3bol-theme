@@ -7,7 +7,7 @@ import type { DialogDefinition } from "./dialog.type";
 export const Dialog = ({ isOpen, setModal }: DialogDefinition) => {
   const DialogCore = () => {
     return (
-      <div className="dialog-container">
+      <div className="dialog-core">
         <div className="dialog-icon">
           <Icon name="warning" size={30} />
         </div>
@@ -29,14 +29,14 @@ export const Dialog = ({ isOpen, setModal }: DialogDefinition) => {
   };
 
   return (
-    <>
-      {/* <ModalFull isOpen={isOpen} setModal={setModal}>
+    <div className="dialog-container">
+      <ModalFull isOpen={isOpen} setModal={setModal}>
         <DialogCore />
-      </ModalFull> */}
+      </ModalFull>
       <ModalSticky isOpen={isOpen} setModal={setModal}>
         <DialogCore />
       </ModalSticky>
-    </>
+    </div>
   );
 };
 
