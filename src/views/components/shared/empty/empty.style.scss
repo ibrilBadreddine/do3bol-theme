@@ -1,0 +1,43 @@
+.empty-container {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  height: 100%; // Optional
+  .empty-box {
+    display: grid;
+    gap: 1em;
+    .box-content {
+      display: grid;
+      gap: 5px;
+      .box-subtitle {
+        color: var(--gray-500);
+        font-size: 13px;
+      }
+    }
+    .box-icon {
+      position: relative;
+      svg {
+        padding: 1.5em 1em;
+        border-radius: var(--radius-sm);
+        color: var(--gray-500);
+        box-shadow: var(--shadow-dark-sm);
+        background-color: var(--base-white);
+        rotate: 5deg;
+      }
+      &::before {
+        content: "";
+        width: 50px;
+        height: 60px;
+        position: absolute;
+        translate: -50% 0;
+        left: 47%;
+        bottom: 0;
+        border-radius: var(--radius-sm);
+        box-shadow: var(--shadow-dark-sm);
+        background-color: var(--gray-50);
+        rotate: -5deg;
+      }
+    }
+  }
+}

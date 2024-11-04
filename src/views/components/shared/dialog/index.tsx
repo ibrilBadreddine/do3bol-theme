@@ -1,4 +1,4 @@
-import "./style.scss";
+import "./dialog.style.scss";
 import Icon from "@components/shared/icons";
 import ModalFull from "@components/shared/modal/full";
 import ModalSticky from "@components/shared/modal/sticky";

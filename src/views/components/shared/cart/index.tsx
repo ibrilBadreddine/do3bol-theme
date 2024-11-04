@@ -1,11 +1,13 @@
 import "./cart.style.scss";
 import { useState } from "react";
 import Icon from "@components/shared/icons";
+import Empty from "@components/shared/empty";
 import Dialog from "@components/shared/dialog";
-import type { CartDefinition } from "./cart.type";
 import Product1 from "@/assets/images/product-1.jpg";
+import type { CartDefinition } from "./cart.type";
 
 const Cart = ({ isOpen, setModal }: CartDefinition) => {
+  const [cart, setCart] = useState<number>(0);
   const [isDelete, setDelete] = useState<boolean>(false);
 
   return (
@@ -22,37 +24,47 @@ const Cart = ({ isOpen, setModal }: CartDefinition) => {
         </div>
         <div className="cart-core">
           <div className="cart-items">
-            <div className="items-note">
-              <Icon name="cart" />
-              You have 3 items in your list chart
-            </div>
-            {[...Array(3)].map((_, i) => (
-              <div key={i} className="cart-item">
-                <div className="cart-detail">
-                  <img src={Product1} alt="" className="item-img" />
-                  <div className="item-info">
-                    <div className="headlines">
-                      <p>Boxy fit patch sweatshirt</p>
-                      <span>999 MAD</span>
-                    </div>
-                    <div className="quantity">
-                      <button className="minus-quantity icon">
-                        <Icon name="minus" size={15} />
-                      </button>
-                      <span className="value-add-quantity">0</span>
-                      <button className="add-quantity icon">
-                        <Icon name="plus" size={15} />
-                      </button>
-                    </div>
-                  </div>
+            {cart > 0 ? (
+              <>
+                <div className="items-note">
+                  <Icon name="cart" />
+                  You have 3 items in your list chart
                 </div>
-                <button
-                  onClick={() => setDelete(true)}
-                  className="item-action secondary sm">
-                  <Icon name="trash" size={15} />
-                </button>
-              </div>
-            ))}
+                {[...Array(3)].map((_, i) => (
+                  <div key={i} className="cart-item">
+                    <div className="cart-detail">
+                      <img src={Product1} alt="" className="item-img" />
+                      <div className="item-info">
+                        <div className="headlines">
+                          <p>Boxy fit patch sweatshirt</p>
+                          <span>999 MAD</span>
+                        </div>
+                        <div className="quantity">
+                          <button className="minus-quantity icon">
+                            <Icon name="minus" size={15} />
+                          </button>
+                          <span className="value-add-quantity">0</span>
+                          <button className="add-quantity icon">
+                            <Icon name="plus" size={15} />
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                    <button
+                      onClick={() => setDelete(true)}
+                      className="item-action secondary sm">
+                      <Icon name="trash" size={15} />
+                    </button>
+                  </div>
+                ))}
+              </>
+            ) : (
+              <Empty
+                icon="cart"
+                title="Your cart is empty!"
+                subtitle="Looks like you haven't added anything to your cart yet."
+              />
+            )}
           </div>
           <div className="cart-info">
             <div className="total">

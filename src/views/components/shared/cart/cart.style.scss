@@ -36,8 +36,10 @@
       height: 100%;
       .cart-items {
         padding: 1.5em;
-        display: grid;
+        display: flex;
+        flex-direction: column;
         gap: 1em;
+        height: 100%;
         .items-note {
           display: flex;
           gap: 1em;
