@@ -1,0 +1,126 @@
+.toast-container {
+  .toast {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    padding: 1em;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-dark-sm);
+    background-color: var(--base-white);
+    border-left: 5px solid;
+    width: fit-content;
+    position: fixed;
+    user-select: none;
+    opacity: 0;
+    visibility: hidden;
+    filter: blur(2px);
+    z-index: 9999;
+    translate: -50% -50%;
+    bottom: -5%;
+    left: 50%;
+    transition: all 0.3s;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    &:is(.success) {
+      border-color: var(--success-500);
+      > svg:first-of-type {
+        color: var(--success-500);
+      }
+    }
+    &:is(.info) {
+      border-color: var(--info-500);
+      > svg:first-of-type {
+        color: var(--info-500);
+      }
+    }
+    &:is(.warning) {
+      border-color: var(--warning-500);
+      > svg:first-of-type {
+        color: var(--warning-500);
+      }
+    }
+    &:is(.error) {
+      border-color: var(--error-500);
+      > svg:first-of-type {
+        color: var(--error-500);
+      }
+    }
+    &:is(.promise) {
+      border-color: var(--gray-500);
+      > svg:first-of-type {
+        color: var(--gray-500);
+        animation: 1s load infinite linear;
+      }
+    }
+    &[data-is-active="true"] {
+      opacity: 1;
+      visibility: visible;
+      filter: none;
+      bottom: -2%;
+    }
+    .toast-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 3em;
+      .toast-info {
+        h4 {
+          font-size: 14px;
+        }
+        p {
+          font-size: 13px;
+          color: var(--gray-500);
+        }
+      }
+      .toast-action {
+        padding: 5px;
+        border-radius: var(--radius-sm);
+        background-color: transparent;
+        color: var(--gray-500);
+        opacity: 0;
+        transition: none;
+        &:hover {
+          background-color: var(--gray-50);
+        }
+      }
+    }
+    &:hover .toast-action {
+      opacity: 1;
+    }
+  }
+}
+
+@keyframes load {
+  0% {
+    rotate: 0deg;
+  }
+  100% {
+    rotate: 360deg;
+  }
+}
+
+@media (max-width: 766px) {
+  .toast-container .toast {
+    translate: 0;
+    left: 0;
+    margin: 0 1em;
+    width: -webkit-fill-available;
+    &[data-is-active="true"] {
+      bottom: 1%;
+    }
+    .toast-content {
+      width: 100%;
+      gap: 1em;
+      .toast-info {
+        h4 {
+          font-size: 13px;
+        }
+        p {
+          font-size: 12px;
+        }
+      }
+      .toast-action {
+        opacity: 1;
+      }
+    }
+  }
+}
