@@ -50,7 +50,10 @@ export default function Header() {
               </div>
             </div>
           </div>
-          <div className="menu-overlay overlay" />
+          <div
+            onClick={() => setMenu(false)}
+            className="menu-overlay overlay"
+          />
         </div>
       </div>
       <div className="logo-box">
