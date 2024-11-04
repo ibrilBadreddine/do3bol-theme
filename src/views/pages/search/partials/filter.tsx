@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Icon from "@/views/components/shared/icons";
-import ModalSticky from "@/views/components/shared/modal/sticky/modal-sticky";
+import ModalSticky from "@/views/components/shared/modal/sticky";
 
 export default function Filter() {
   const [filterMobile, setFilterMobile] = useState(false);

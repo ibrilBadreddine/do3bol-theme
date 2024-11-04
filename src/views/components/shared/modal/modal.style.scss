@@ -1,28 +1,16 @@
-.modal-box {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  z-index: 9999;
-  height: fit-content;
-  background-color: var(--base-white);
-  border-radius: var(--radius-xl) var(--radius-xl) 0 0;
-  transition: var(--transition-duration);
-  .modal-head {
-    justify-content: space-between;
-    align-items: start;
-    gap: 1em;
-    padding: 3em 5% 1em 5%;
-    position: relative;
-    .headlines {
-      display: grid;
-      gap: 5px;
-      text-align: center;
-      p {
-        color: var(--gray-500);
-        font-size: 14px;
-      }
-    }
+// STICKY
+.modal-container.modal-sticky {
+  .modal-box {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    z-index: 10001;
+    padding-top: 2em;
+    height: fit-content;
+    background-color: var(--base-white);
+    border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+    transition: var(--transition-duration);
     &::before {
       content: "";
       translate: -50% -50%;
@@ -34,13 +22,35 @@
       height: 6px;
       width: 10%;
     }
+    .modal-head {
+      justify-content: space-between;
+      align-items: start;
+      gap: 1em;
+      padding: 1em 5%;
+      position: relative;
+      .headlines {
+        display: grid;
+        gap: 5px;
+        text-align: center;
+        p {
+          color: var(--gray-500);
+          font-size: 14px;
+        }
+      }
+    }
+    .modal-core {
+      padding: 2em 5%;
+    }
   }
-  .modal-core {
-    padding: 2em 5%;
+  // TO REMOVE (Override style!!)
+  .overlay {
+    z-index: 10000;
+    opacity: 1;
+    visibility: visible;
   }
 }
 
-.modal-container[data-hidden$="true"] {
+.modal-sticky[data-hidden$="true"] {
   .modal-box {
     bottom: -50%;
     opacity: 0;
@@ -56,5 +66,39 @@
   .modal-box .modal-core {
     overflow: scroll;
     max-height: 50vh;
+  }
+}
+
+// FULL
+.modal-container.modal-full {
+  .modal-box {
+    padding: 2em;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    translate: -50% -50%;
+    width: 400px;
+    z-index: 10001;
+    height: fit-content;
+    background-color: var(--base-white);
+    border-radius: var(--radius-lg);
+    transition: var(--transition-duration);
+  }
+  // TO REMOVE (Override style!!)
+  .overlay {
+    z-index: 10000;
+    opacity: 1;
+    visibility: visible;
+  }
+}
+.modal-full[data-hidden$="true"] {
+  .modal-box {
+    top: 60%;
+    opacity: 0;
+    visibility: hidden;
+  }
+  .overlay {
+    opacity: 0;
+    visibility: hidden;
   }
 }

@@ -1,9 +1,13 @@
 import "./cart.style.scss";
-import Icon from "@/views/components/shared/icons";
+import { useState } from "react";
+import Icon from "@components/shared/icons";
+import Dialog from "@components/shared/dialog";
 import type { CartDefinition } from "./cart.type";
 import Product1 from "@/assets/images/product-1.jpg";
 
 const Cart = ({ isOpen, setModal }: CartDefinition) => {
+  const [isDelete, setDelete] = useState<boolean>(false);
+
   return (
     <div className="cart-container" data-hidden={!isOpen}>
       <div className="cart-box">
@@ -42,7 +46,9 @@ const Cart = ({ isOpen, setModal }: CartDefinition) => {
                     </div>
                   </div>
                 </div>
-                <button className="item-action secondary sm">
+                <button
+                  onClick={() => setDelete(true)}
+                  className="item-action secondary sm">
                   <Icon name="trash" size={15} />
                 </button>
               </div>
@@ -63,6 +69,8 @@ const Cart = ({ isOpen, setModal }: CartDefinition) => {
         </div>
       </div>
       <div className="overlay" onClick={() => setModal(false)} />
+
+      <Dialog isOpen={isDelete} setModal={setDelete} />
     </div>
   );
 };

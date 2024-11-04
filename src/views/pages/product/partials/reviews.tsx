@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Icon from "@/views/components/shared/icons";
 import ProductsReviews from "@/views/components/sections/products/reviews";
-import ModalSticky from "@/views/components/shared/modal/sticky/modal-sticky";
+import ModalSticky from "@/views/components/shared/modal/sticky";
 import Upload from "@/views/components/shared/upload";
 
 export default function Reviews() {

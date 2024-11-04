@@ -1,5 +1,5 @@
 import { useState } from "react";
-import ModalSticky from "@/views/components/shared/modal/sticky/modal-sticky";
+import ModalSticky from "@/views/components/shared/modal/sticky";
 
 export default function ExpressCheckout() {
   const [modal, setModal] = useState<boolean>(false);
