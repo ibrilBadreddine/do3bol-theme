@@ -24,6 +24,7 @@
         box-shadow: var(--shadow-dark-sm);
         background-color: var(--base-white);
         rotate: 5deg;
+        transition: var(--transition-duration);
       }
       &::before {
         content: "";
@@ -37,6 +38,17 @@
         box-shadow: var(--shadow-dark-sm);
         background-color: var(--gray-50);
         rotate: -5deg;
+        transition: var(--transition-duration);
+      }
+      &:hover {
+        &::before {
+          rotate: -10deg;
+          translate: -60% 0;
+        }
+        svg {
+          rotate: 10deg;
+          translate: 10% 0;
+        }
       }
     }
   }
