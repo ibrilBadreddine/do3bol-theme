@@ -257,54 +257,58 @@
       }
     }
     .review-form {
-      display: grid;
-      gap: 1.5em;
-      .rate-box {
-        display: flex;
-        justify-content: center;
-        margin-bottom: 2em;
-        .stars {
+      .modal-sticky {
+        display: none;
+      }
+      .review-core {
+        display: grid;
+        .rate-box {
           display: flex;
-          align-items: center;
           justify-content: center;
-          button {
-            padding: 0 3px;
-            background-color: transparent;
-            color: #faab00;
-            &:hover ~ button {
-              svg {
-                fill: transparent;
+          margin-bottom: 2.5em;
+          .stars {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            button {
+              padding: 0 3px;
+              background-color: transparent;
+              color: #faab00;
+              &:hover ~ button {
+                svg {
+                  fill: transparent;
+                }
+              }
+              &:hover {
+                scale: 1.3;
               }
             }
-            &:hover {
-              scale: 1.3;
-            }
-          }
-          &:hover button,
-          .active-rate {
-            svg {
-              fill: #faab00;
+            &:hover button,
+            .active-rate {
+              svg {
+                fill: #faab00;
+              }
             }
           }
         }
-      }
-      .information-box {
-        display: grid;
-        gap: 1em;
-        grid-template-columns: repeat(2, 1fr);
-        input:nth-child(3),
-        textarea,
-        .upload-container {
-          grid-column: 3 / 1;
+        .information-box {
+          display: grid;
+          gap: 1em;
+          grid-template-columns: repeat(2, 1fr);
+          input:nth-child(3),
+          textarea,
+          .upload-container {
+            grid-column: 3 / 1;
+          }
         }
-      }
-      .actions-box {
-        margin-top: 1em;
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 0.5em;
-        button {
-          justify-content: center;
+        .actions-box {
+          margin-top: 1em;
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 0.5em;
+          button {
+            justify-content: center;
+          }
         }
       }
     }
@@ -366,12 +370,28 @@
         }
       }
     }
-    .reviews-area .reviews-head {
-      button:is(.primary) {
-        display: none;
+    .reviews-area {
+      .review-form {
+        .modal-sticky {
+          display: initial;
+        }
+        .modal-full {
+          display: none;
+        }
+        .review-core {
+          gap: 1.5em;
+          .rate-box {
+            margin-bottom: 2em;
+          }
+        }
       }
-      button:is(.icon) {
-        display: flex;
+      .reviews-head {
+        button:is(.primary) {
+          display: none;
+        }
+        button:is(.icon) {
+          display: flex;
+        }
       }
     }
     .express-checkout-area {

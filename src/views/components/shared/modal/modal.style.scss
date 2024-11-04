@@ -72,7 +72,6 @@
 // FULL
 .modal-container.modal-full {
   .modal-box {
-    padding: 2em;
     position: fixed;
     left: 50%;
     top: 50%;
@@ -83,6 +82,27 @@
     background-color: var(--base-white);
     border-radius: var(--radius-lg);
     transition: var(--transition-duration);
+    .modal-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.5em 2em;
+      border-bottom: 1px solid var(--gray-50);
+      .headlines {
+        display: grid;
+        gap: 3px;
+        p {
+          color: var(--gray-500);
+          font-size: 13px;
+        }
+      }
+      button {
+        padding: 8px;
+      }
+    }
+    .modal-core {
+      padding: 2em;
+    }
   }
   // TO REMOVE (Override style!!)
   .overlay {
