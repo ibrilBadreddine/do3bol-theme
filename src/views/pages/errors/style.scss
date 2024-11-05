@@ -38,6 +38,9 @@
         &:hover {
           background-color: var(--gray-50);
         }
+        &:dir(rtl) {
+          flex-direction: row-reverse;
+        }
       }
     }
   }
