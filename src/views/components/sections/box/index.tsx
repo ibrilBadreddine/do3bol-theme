@@ -1,26 +1,29 @@
 import "./box.style.scss";
 import Icon from "@components/shared/icons";
+import { useTranslation } from "react-i18next";
 
 export default function Box() {
+  const { t } = useTranslation();
+
   const BOXES = [
     {
-      title: "Always in style",
-      subtitle: "Looks that stay fresh, season after season.",
+      title: t("sections.box.items.item_1.title"),
+      subtitle: t("sections.box.items.item_1.subtitle"),
       icon: "sparkles",
     },
     {
-      title: "Planet friendly",
-      subtitle: "Sustainable fabrics made with care.",
+      title: t("sections.box.items.item_2.title"),
+      subtitle: t("sections.box.items.item_2.subtitle"),
       icon: "world",
     },
     {
-      title: "Easy returns",
-      subtitle: "Simple returns to keep shopping worry-free.",
+      title: t("sections.box.items.item_3.title"),
+      subtitle: t("sections.box.items.item_3.subtitle"),
       icon: "cube",
     },
     {
-      title: "Worldwide delivery",
-      subtitle: "Bringing style to your door, anywhere.",
+      title: t("sections.box.items.item_4.title"),
+      subtitle: t("sections.box.items.item_4.subtitle"),
       icon: "rocket",
     },
   ];
@@ -28,8 +31,8 @@ export default function Box() {
   return (
     <div className="box-container">
       <div className="section-headlines">
-        <h1>Made for everyday life</h1>
-        <p>Quality, style, and comfort you can count on.</p>
+        <h1>{t("sections.box.title")}</h1>
+        <p>{t("sections.box.subtitle")}</p>
       </div>
       <div className="boxes-cards">
         {BOXES.map((box, i) => (

@@ -5,6 +5,7 @@ import Icon from "@/views/components/shared/icons";
 import SliderV1 from "@/assets/images/slider.jpg";
 import SliderV2 from "@/assets/images/slider-v2.jpg";
 import SliderV3 from "@/assets/images/slider-v3.jpg";
+import { useTranslation } from "react-i18next";
 
 const Slider: React.FC<SliderDefinition> = ({
   orientation,
@@ -14,6 +15,8 @@ const Slider: React.FC<SliderDefinition> = ({
   width = "50%",
   height = "500px",
 }) => {
+  const { t, i18n } = useTranslation();
+
   const ITEMS = [SliderV1, SliderV2, SliderV3];
 
   const PER_PAGE = perPage;
@@ -46,9 +49,9 @@ const Slider: React.FC<SliderDefinition> = ({
           <div
             className="slider-inner"
             style={{
-              transform: `translate${IS_VERTICAL ? "Y" : "X"}(calc(-${
-                index * (100 / PER_PAGE)
-              }% + ${translatePos}px))`,
+              transform: `${IS_VERTICAL ? `translateY` : `translateX`}(calc(${
+                i18n.language === "ar" ? "" : "-"
+              }${index * (100 / PER_PAGE)}% + ${translatePos}px))`,
             }}>
             {ITEMS.map((item, i) => (
               <div className="slider-item" key={i}>
@@ -60,9 +63,10 @@ const Slider: React.FC<SliderDefinition> = ({
                 />
                 {content && (
                   <div className="item-content">
-                    <p>We are digital meets fashions</p>
+                    <p>{t("sections.slider.title")}</p>
                     <button className="secondary">
-                      Start Shopping <Icon name="arrow_right_up" />
+                      {t("sections.slider.action")}
+                      <Icon name="arrow_right_up" />
                     </button>
                   </div>
                 )}

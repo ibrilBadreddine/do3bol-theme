@@ -1,6 +1,7 @@
 import "./prod-reviews.style.scss";
 import Icon from "@/views/components/shared/icons";
 import type { ReviewDefinition } from "../products.type";
+import { useTranslation } from "react-i18next";
 
 const ProductsReviews: React.FC<ReviewDefinition> = ({
   title,
@@ -8,30 +9,28 @@ const ProductsReviews: React.FC<ReviewDefinition> = ({
   columns = 4,
   gap = 2,
 }) => {
+  const { t } = useTranslation();
+
   const REVIEWS = [
     {
-      rating: 5,
-      writer: "Laila Hassan",
-      review:
-        "Absolutely love this sweatshirt! Super comfy and the boxy fit is perfect. Looks great with jeans or joggers!",
+      rating: t("sections.products.reviews.item_1.rating"),
+      writer: t("sections.products.reviews.item_1.writer"),
+      review: t("sections.products.reviews.item_1.review"),
     },
     {
-      rating: 4,
-      writer: "Omar Al-Mansouri",
-      review:
-        "Great for casual days! Love the relaxed fit, though I wish it was a bit softer. Still, awesome look!",
+      rating: t("sections.products.reviews.item_2.rating"),
+      writer: t("sections.products.reviews.item_2.writer"),
+      review: t("sections.products.reviews.item_2.review"),
     },
     {
-      rating: 4,
-      writer: "Yasmin Khaled",
-      review:
-        "Really cool design and the patches make it stand out. It’s a bit oversized, but that’s the vibe I wanted!",
+      rating: t("sections.products.reviews.item_3.rating"),
+      writer: t("sections.products.reviews.item_3.writer"),
+      review: t("sections.products.reviews.item_3.review"),
     },
     {
-      rating: 2,
-      writer: "Ahmed Saeed",
-      review:
-        "It’s nice, but the boxy fit was a bit too wide for me. Love the style though – would size down next time.",
+      rating: t("sections.products.reviews.item_4.rating"),
+      writer: t("sections.products.reviews.item_4.writer"),
+      review: t("sections.products.reviews.item_4.review"),
     },
   ];
 
