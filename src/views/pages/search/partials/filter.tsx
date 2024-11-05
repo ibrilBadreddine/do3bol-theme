@@ -1,36 +1,48 @@
 import { useState } from "react";
 import Icon from "@/views/components/shared/icons";
 import ModalSticky from "@/views/components/shared/modal/sticky";
+import { useTranslation } from "react-i18next";
 
 export default function Filter() {
+  const { t } = useTranslation();
   const [filterMobile, setFilterMobile] = useState(false);
 
   return (
     <>
       <div className="filter-box">
-        <span className="result-count">Showing 9 results</span>
+        <span className="result-count">
+          {t("pages.collections.partials.filter.count")}
+        </span>
         <div className="filter-options">
-          <button className="link">All</button>
-          <button className="link">Man</button>
-          <button className="link">Woman</button>
-          <button className="link">Kids</button>
+          <button className="link">
+            {t("pages.collections.partials.filter.categories.options.opt_1")}
+          </button>
+          <button className="link">
+            {t("pages.collections.partials.filter.categories.options.opt_2")}
+          </button>
+          <button className="link">
+            {t("pages.collections.partials.filter.categories.options.opt_3")}
+          </button>
+          <button className="link">
+            {t("pages.collections.partials.filter.categories.options.opt_4")}
+          </button>
         </div>
         <div className="filter-sort">
           <label>
             <Icon name="arrows_up_down" size={15} />
-            Sort by:
+            {t("pages.collections.partials.filter.sort.label")}
           </label>
           <div className="sort-options">
             <button className="icon">
-              Price
+              {t("pages.collections.partials.filter.sort.options.opt_1")}
               <Icon name="chevron_up" size={15} />
             </button>
             <button className="icon">
-              Newest
+              {t("pages.collections.partials.filter.sort.options.opt_2")}
               <Icon name="chevron_up" size={15} />
             </button>
             <button className="icon">
-              A-Z
+              {t("pages.collections.partials.filter.sort.options.opt_3")}
               <Icon name="chevron_up" size={15} />
             </button>
           </div>
@@ -43,40 +55,62 @@ export default function Filter() {
       </div>
 
       <ModalSticky
-        title="Quick filters"
-        subtitle="Filter collections & sort items"
+        title={t("pages.collections.partials.filter.head.title")}
+        subtitle={t("pages.collections.partials.filter.head.subtitle")}
         isOpen={filterMobile}
         setModal={setFilterMobile}>
         <div className="filter-box-mobile">
           <div className="filter-tab">
-            <label>Choose collection:</label>
+            <label>
+              {t("pages.collections.partials.filter.categories.label")}
+            </label>
             <div className="options">
-              <button className="icon">All</button>
-              <button className="icon">Man</button>
-              <button className="icon">Woman</button>
-              <button className="icon">Kids</button>
+              <button className="icon">
+                {t(
+                  "pages.collections.partials.filter.categories.options.opt_1"
+                )}
+              </button>
+              <button className="icon">
+                {t(
+                  "pages.collections.partials.filter.categories.options.opt_2"
+                )}
+              </button>
+              <button className="icon">
+                {t(
+                  "pages.collections.partials.filter.categories.options.opt_3"
+                )}
+              </button>
+              <button className="icon">
+                {t(
+                  "pages.collections.partials.filter.categories.options.opt_4"
+                )}
+              </button>
             </div>
           </div>
           <div className="filter-tab">
-            <label>Sort by:</label>
+            <label>{t("pages.collections.partials.filter.sort.label")}</label>
             <div className="options">
               <button className="icon">
-                Price
+                {t("pages.collections.partials.filter.sort.options.opt_1")}
                 <Icon name="chevron_up" size={15} />
               </button>
               <button className="icon">
-                Newest
+                {t("pages.collections.partials.filter.sort.options.opt_2")}
                 <Icon name="chevron_up" size={15} />
               </button>
               <button className="icon">
-                A-Z
+                {t("pages.collections.partials.filter.sort.options.opt_3")}
                 <Icon name="chevron_up" size={15} />
               </button>
             </div>
           </div>
           <div className="filter-actions">
-            <button className="icon">Reset</button>
-            <button className="primary">Apply</button>
+            <button className="icon">
+              {t("pages.collections.partials.filter.actions.reset")}
+            </button>
+            <button className="primary">
+              {t("pages.collections.partials.filter.actions.apply")}
+            </button>
           </div>
         </div>
       </ModalSticky>

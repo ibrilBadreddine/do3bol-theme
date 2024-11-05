@@ -197,13 +197,26 @@
       "partials": {
         "filter": {
           "count": "Showing 9 results",
+          "head": {
+            "title": "Quick filters",
+            "subtitle": "Filter collections & sort items"
+          },
           "categories": {
             "label": "Choose collection:",
-            "options": ["All", "Man", "Woman", "Kids"]
+            "options": {
+              "opt_1": "All",
+              "opt_2": "Man",
+              "opt_3": "Woman",
+              "opt_4": "Kids"
+            }
           },
           "sort": {
             "label": "Sort by:",
-            "options": ["Price", "Newest", "A-Z"]
+            "options": {
+              "opt_1": "Price",
+              "opt_2": "Newest",
+              "opt_3": "A-Z"
+            }
           },
           "actions": {
             "reset": "Reset",

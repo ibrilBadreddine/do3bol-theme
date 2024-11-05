@@ -18,6 +18,9 @@
         opacity: 0.5;
       }
     }
+    &:dir(rtl) svg {
+      rotate: 180deg;
+    }
   }
   // Browsing
   .browsing-area {

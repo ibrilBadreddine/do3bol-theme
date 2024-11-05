@@ -1,15 +1,18 @@
 import ProductsList from "@components/sections/products/list";
 import Empty from "@components/shared/empty";
+import { useTranslation } from "react-i18next";
 
 export default function Result() {
+  const { t } = useTranslation();
+
   return (
     <div className="result-box">
-      <ProductsList gap={1} length={6} />
-      {/* <Empty
-        title="No products found!"
-        subtitle="Your search didn't match any product, Please try again."
+      {/* <ProductsList gap={1} length={6} /> */}
+      <Empty
+        title={t("pages.collections.partials.result.empty.title")}
+        subtitle={t("pages.collections.partials.result.empty.subtitle")}
         icon="search"
-      /> */}
+      />
     </div>
   );
 }
