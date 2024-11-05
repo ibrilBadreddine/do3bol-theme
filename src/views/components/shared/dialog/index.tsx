@@ -3,8 +3,11 @@ import Icon from "@components/shared/icons";
 import ModalFull from "@components/shared/modal/full";
 import ModalSticky from "@components/shared/modal/sticky";
 import type { DialogDefinition } from "./dialog.type";
+import { useTranslation } from "react-i18next";
 
 export const Dialog = ({ isOpen, setModal }: DialogDefinition) => {
+  const { t } = useTranslation();
+
   const DialogCore = () => {
     return (
       <div className="dialog-core">
@@ -12,17 +15,16 @@ export const Dialog = ({ isOpen, setModal }: DialogDefinition) => {
           <Icon name="warning" size={30} />
         </div>
         <div className="dialog-content">
-          <h4>Your're about to delete item</h4>
-          <p>
-            Are you sure you want to delete this item? This action cannot be
-            undone.
-          </p>
+          <h4>{t("components.dialog.title")}</h4>
+          <p>{t("components.dialog.subtitle")}</p>
         </div>
         <div className="dialog-actions">
           <button className="icon" onClick={() => setModal(false)}>
-            No, keep it
+            {t("components.dialog.actions.cancel")}
           </button>
-          <button className="destructive">Yes, delete</button>
+          <button className="destructive">
+            {t("components.dialog.actions.delete")}
+          </button>
         </div>
       </div>
     );

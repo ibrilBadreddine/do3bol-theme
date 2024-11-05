@@ -9,7 +9,7 @@ import { useTranslation } from "react-i18next";
 
 const Cart = ({ isOpen, setModal }: CartDefinition) => {
   const { t } = useTranslation();
-  const [cart, setCart] = useState<number>(0);
+  const [cart, setCart] = useState<number>(3);
   const [isDelete, setDelete] = useState<boolean>(false);
 
   return (
