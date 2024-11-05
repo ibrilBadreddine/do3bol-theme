@@ -1,7 +1,10 @@
-import StoreLogo from "@/assets/images/logo.png";
 import { Link } from "react-router-dom";
+import StoreLogo from "@/assets/images/logo.png";
+import { useTranslation } from "react-i18next";
 
 export default function Footer() {
+  const { t } = useTranslation();
+
   return (
     <footer className="footer-container">
       <div className="footer-core">
@@ -12,31 +15,41 @@ export default function Footer() {
         </div>
         <div className="links-box">
           <div className="navigation">
-            <p>Terms and conditions</p>
+            <p>{t("layouts.footer.navigation.terms.title")}</p>
             <div className="links">
-              <Link to="/">Terms & Conditions</Link>
-              <Link to="/">Return Policy</Link>
-              <Link to="/">Privacy Policy</Link>
+              <Link to="/">
+                {t("layouts.footer.navigation.terms.terms_and_conditions")}
+              </Link>
+              <Link to="/">
+                {t("layouts.footer.navigation.terms.return_policy")}
+              </Link>
+              <Link to="/">
+                {t("layouts.footer.navigation.terms.privacy_policy")}
+              </Link>
             </div>
           </div>
           <div className="navigation">
-            <p>About the store</p>
+            <p>{t("layouts.footer.navigation.us.title")}</p>
             <div className="links">
-              <Link to="/">About us</Link>
-              <Link to="/">How to pay</Link>
-              <Link to="/">Shipping & Delivery</Link>
+              <Link to="/">{t("layouts.footer.navigation.us.about_us")}</Link>
+              <Link to="/">{t("layouts.footer.navigation.us.how_to_pay")}</Link>
+              <Link to="/">
+                {t("layouts.footer.navigation.us.shipping_and_delivery")}
+              </Link>
             </div>
           </div>
           <div className="navigation">
-            <p>Contact</p>
+            <p>{t("layouts.footer.navigation.contact.title")}</p>
             <div className="links">
-              <Link to="/">Contact us</Link>
-              <Link to="/">FAQ</Link>
+              <Link to="/">
+                {t("layouts.footer.navigation.contact.contact_us")}
+              </Link>
+              <Link to="/">{t("layouts.footer.navigation.contact.faq")}</Link>
             </div>
           </div>
         </div>
       </div>
-      <div className="footer-copyrights">Made with ♥ by YouCan</div>
+      <div className="footer-copyrights">{t("layouts.footer.copyrights")}</div>
     </footer>
   );
 }

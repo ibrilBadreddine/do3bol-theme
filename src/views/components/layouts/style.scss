@@ -83,6 +83,15 @@
           top: -8px;
           left: -8px;
         }
+        &:dir(rtl) {
+          &::before {
+            right: 40px;
+          }
+          .total-items {
+            left: initial;
+            right: -8px;
+          }
+        }
       }
     }
     // Mobile Menu
@@ -98,6 +107,9 @@
           border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
           background-color: var(--base-white);
           transition: var(--transition-duration);
+          &:dir(rtl) {
+            border-radius: var(--radius-lg) 0 0 var(--radius-lg);
+          }
           .menu-head {
             display: flex;
             align-items: center;
@@ -146,6 +158,9 @@
           translate: -100% 0;
           opacity: 0;
           visibility: hidden;
+          &:dir(rtl) {
+            translate: 100% 0;
+          }
         }
         .menu-overlay {
           opacity: 0;

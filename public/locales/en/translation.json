@@ -5,23 +5,33 @@
   "layouts": {
     "header": {
       "search": "Search...",
-      "links": ["Home", "Man", "Woman", "Kids"]
+      "links": {
+        "home": "Home",
+        "man": "Home",
+        "woman": "Woman",
+        "kids": "Kids"
+      }
     },
     "footer": {
-      "tabs": [
-        {
+      "navigation": {
+        "terms": {
           "title": "Terms and conditions",
-          "links": ["Terms & Conditions", "Return Policy", "Privacy Policy"]
+          "terms_and_conditions": "Terms & Conditions",
+          "return_policy": "Return Policy",
+          "privacy_policy": "Privacy Policy"
         },
-        {
+        "us": {
           "title": "About the store",
-          "links": ["About us", "How to pay", "Shipping & Delivery"]
+          "about_us": "About us",
+          "how_to_pay": "How to pay",
+          "shipping_and_delivery": "Shipping & Delivery"
         },
-        {
+        "contact": {
           "title": "Contact",
-          "links": ["Contact us", "FAQ"]
+          "contact_us": "Contact us",
+          "faq": "FAQ"
         }
-      ],
+      },
       "copyrights": "Made with ♥ by YouCan"
     }
   },

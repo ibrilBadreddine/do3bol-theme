@@ -3,8 +3,10 @@ import { Link } from "react-router-dom";
 import StoreLogo from "@/assets/images/logo.png";
 import Icon from "@components/shared/icons";
 import Cart from "@/views/components/shared/cart";
+import { useTranslation } from "react-i18next";
 
 export default function Header() {
+  const { t } = useTranslation();
   const [search, setSearch] = useState<boolean>(false);
   const [menu, setMenu] = useState<boolean>(false);
   const [cart, setCart] = useState<boolean>(false);
@@ -12,10 +14,10 @@ export default function Header() {
   return (
     <header className="header-container">
       <div className="links-box">
-        <Link to="/">Home</Link>
-        <Link to="/">Man</Link>
-        <Link to="/">Woman</Link>
-        <Link to="/">Kids</Link>
+        <Link to="/">{t("layouts.header.links.home")}</Link>
+        <Link to="/">{t("layouts.header.links.man")}</Link>
+        <Link to="/">{t("layouts.header.links.woman")}</Link>
+        <Link to="/">{t("layouts.header.links.kids")}</Link>
       </div>
       <div className="header-mobile" data-hidden={!menu}>
         <button
@@ -33,19 +35,22 @@ export default function Header() {
               </button>
             </div>
             <div className="menu-core">
-              <input type="search" placeholder="Search..." />
+              <input type="search" placeholder={t("layouts.header.search")} />
               <div className="links">
                 <Link to="/">
-                  Home <Icon name="arrow_right_up" />
+                  {t("layouts.header.links.home")}
+                  <Icon name="arrow_right_up" />
                 </Link>
                 <Link to="/">
-                  Man <Icon name="arrow_right_up" />
+                  {t("layouts.header.links.man")} <Icon name="arrow_right_up" />
                 </Link>
                 <Link to="/">
-                  Woman <Icon name="arrow_right_up" />
+                  {t("layouts.header.links.woman")}
+                  <Icon name="arrow_right_up" />
                 </Link>
                 <Link to="/">
-                  Kids <Icon name="arrow_right_up" />
+                  {t("layouts.header.links.kids")}
+                  <Icon name="arrow_right_up" />
                 </Link>
               </div>
             </div>
@@ -64,7 +69,7 @@ export default function Header() {
       <div className="actions-box">
         <div className="search-bar" data-hidden={!search}>
           <Icon name="search" />
-          <input type="search" placeholder="Search..." />
+          <input type="search" placeholder={t("layouts.header.search")} />
         </div>
         <button onClick={() => setSearch(!search)} className="icon search-btn">
           <Icon name={!search ? "search" : "close"} />
@@ -72,7 +77,7 @@ export default function Header() {
         <button onClick={() => setCart(true)} className="icon cart-btn">
           <span className="total-items">4</span>
           <Icon name="cart" />
-          <span className="total-amount">0 MAD</span>
+          <span className="total-amount">0 {t("common.currency")}</span>
         </button>
       </div>
 

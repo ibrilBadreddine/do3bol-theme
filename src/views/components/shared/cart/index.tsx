@@ -5,8 +5,10 @@ import Empty from "@components/shared/empty";
 import Dialog from "@components/shared/dialog";
 import Product1 from "@/assets/images/product-1.jpg";
 import type { CartDefinition } from "./cart.type";
+import { useTranslation } from "react-i18next";
 
 const Cart = ({ isOpen, setModal }: CartDefinition) => {
+  const { t } = useTranslation();
   const [cart, setCart] = useState<number>(0);
   const [isDelete, setDelete] = useState<boolean>(false);
 
@@ -16,7 +18,7 @@ const Cart = ({ isOpen, setModal }: CartDefinition) => {
         <div className="cart-head">
           <div className="headline">
             <Icon name="cart" />
-            My cart
+            {t("components.cart.head.title")}
           </div>
           <button className="icon" onClick={() => setModal(false)}>
             <Icon name="close" />
@@ -28,7 +30,7 @@ const Cart = ({ isOpen, setModal }: CartDefinition) => {
               <>
                 <div className="items-note">
                   <Icon name="cart" />
-                  You have 3 items in your list chart
+                  {t("components.cart.core.note")}
                 </div>
                 {[...Array(3)].map((_, i) => (
                   <div key={i} className="cart-item">
@@ -61,20 +63,22 @@ const Cart = ({ isOpen, setModal }: CartDefinition) => {
             ) : (
               <Empty
                 icon="cart"
-                title="Your cart is empty!"
-                subtitle="Looks like you haven't added anything to your cart yet."
+                title={t("components.cart.core.empty.title")}
+                subtitle={t("components.cart.core.empty.subtitle")}
               />
             )}
           </div>
           <div className="cart-info">
             <div className="total">
-              <label>Total</label>
-              <h4 className="amount">999 MAD</h4>
+              <label>{t("components.cart.core.total")}</label>
+              <h4 className="amount">999 {t("common.currency")}</h4>
             </div>
             <div className="actions">
-              <button className="primary">Shop now</button>
+              <button className="primary">
+                {t("components.cart.core.actions.shop_now")}
+              </button>
               <button className="icon" onClick={() => setModal(false)}>
-                Continue shopping
+                {t("components.cart.core.actions.continue_shopping")}
               </button>
             </div>
           </div>
