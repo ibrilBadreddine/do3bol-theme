@@ -13,7 +13,7 @@ export default function Search() {
       <div className="navigation-area">
         <Link to="/">{t("pages.collections.navigation.home")}</Link>
         <Icon name="chevron_right" size={12} />
-        <Link to="/search">{t("pages.collections.navigation.browse")}</Link>
+        <Link to="/collections">{t("pages.collections.navigation.browse")}</Link>
       </div>
       <div className="browsing-area">
         <Filter />

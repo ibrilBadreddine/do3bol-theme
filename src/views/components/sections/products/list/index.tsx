@@ -39,7 +39,7 @@ const ProductsList: React.FC<ListDefinition> = ({
         {PRODUCTS.map(
           (product, i) =>
             length > i && (
-              <Link to="/" key={i} className="prod-card">
+              <Link to="/product" key={i} className="prod-card">
                 <img
                   className="prod-picture"
                   src={product.img}
