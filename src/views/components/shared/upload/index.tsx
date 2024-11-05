@@ -1,8 +1,10 @@
 import "./upload.style.scss";
 import { useState } from "react";
 import Icon from "@/views/components/shared/icons";
+import { useTranslation } from "react-i18next";
 
 export default function Upload() {
+  const { t } = useTranslation();
   const [files, setFiles] = useState<File[]>([]);
 
   /**
@@ -20,10 +22,8 @@ export default function Upload() {
           <div className="box-icon">
             <Icon name="photo" size={30} />
           </div>
-          <span className="box-title">
-            Drag your photo here, or choose file
-          </span>
-          <p className="box-subtitle">Maximum file size 2mb</p>
+          <span className="box-title">{t("components.upload.title")}</span>
+          <p className="box-subtitle">{t("components.upload.subtitle")}</p>
         </div>
         <input
           onChange={handleFileChange}

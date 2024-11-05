@@ -58,87 +58,39 @@
           },
           "form": {
             "label": "Customer information:",
-            "fields": [
-              {
-                "placeholder": "Full name",
-                "type": "text"
-              },
-              {
-                "placeholder": "Phone",
-                "type": "number"
-              },
-              {
-                "placeholder": "Address",
-                "type": "email"
-              }
-            ]
+            "fields": {
+              "full_name": { "placeholder": "Full name", "type": "text" },
+              "phone": { "placeholder": "Phone", "type": "number" },
+              "email": { "placeholder": "Address", "type": "text" }
+            }
           },
           "badge": {
             "label": "Size:",
-            "options": [
-              {
-                "label": "XS",
-                "value": "xs"
-              },
-              {
-                "label": "S",
-                "value": "s"
-              },
-              {
-                "label": "M",
-                "value": "m"
-              },
-              {
-                "label": "L",
-                "value": "l"
-              },
-              {
-                "label": "XL",
-                "value": "xl"
-              }
-            ]
+            "options": {
+              "xs": "XS",
+              "s": "S",
+              "m": "M",
+              "l": "L",
+              "XL": "XL"
+            }
           },
           "radio": {
             "label": "Fit:",
-            "options": [
-              {
-                "label": "Regular",
-                "value": "fit"
-              },
-              {
-                "label": "Oversized",
-                "value": "fit"
-              },
-              {
-                "label": "Relaxed",
-                "value": "fit"
-              }
-            ]
+            "options": {
+              "regular": "Regular",
+              "oversized": "Oversized",
+              "relaxed": "Relaxed"
+            }
           },
           "dropdown": {
             "label": "Pattern:",
-            "options": [
-              {
-                "label": "- Select Pattern -",
-                "value": ""
-              },
-              {
-                "label": "Solid",
-                "value": "solid"
-              },
-              {
-                "label": "Striped",
-                "value": "striped"
-              },
-              {
-                "label": "Plaid",
-                "value": "plaid"
-              },
-              {
-                "label": "Floral",
-                "value": "floral"
-              }
-            ]
+            "options": {
+              "default": "- Select Pattern -",
+              "solid": "Solid",
+              "striped": "Striped",
+              "plaid": "plaid",
+              "floral": "floral"
+            }
           }
         },
         "countdown": {
@@ -150,16 +102,16 @@
             "seconds": "Seconds"
           }
         },
-        "description": [
-          {
+        "description": {
+          "chunk_1": {
             "title": "COMPOSITION",
             "details": "Boxy fit sweatshirt made of cotton fabric with a napped interior. Featuring a hood, long sleeves, contrast patch appliqué on the back and ribbed trims. We work with monitoring programmes to ensure compliance with our social, environmental and health and safety standards for our products. To assess compliance, we have developed a programme of audits and continuous improvement plans."
           },
-          {
+          "chunk_2": {
             "title": "CERTIFIED MATERIALS",
             "details": "Nowadays, recycled polyester is mainly made from PET plastic waste. This is a type of plastic that is widely used in a variety of items, such as plastic bottles. Using recycled materials helps limit the production of virgin polyester fibre. It is certified to the Recycled Claim Standard (RCS), which verifies the recycled content and tracks it from source to final product."
           }
-        ],
+        },
         "add_to_cart": "Add to cart"
       },
       "checkout": {

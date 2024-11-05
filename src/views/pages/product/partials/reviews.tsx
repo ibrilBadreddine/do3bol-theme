@@ -4,8 +4,10 @@ import Upload from "@/views/components/shared/upload";
 import ProductsReviews from "@/views/components/sections/products/reviews";
 import ModalFull from "@/views/components/shared/modal/full";
 import ModalSticky from "@/views/components/shared/modal/sticky";
+import { useTranslation } from "react-i18next";
 
 export default function Reviews() {
+  const { t } = useTranslation();
   const [rating, setRating] = useState<number>(0);
   const [reviewModal, setReviewModal] = useState<boolean>(false);
 
@@ -25,17 +27,19 @@ export default function Reviews() {
           </div>
         </div>
         <div className="information-box">
-          <input type="text" placeholder="First name" />
-          <input type="text" placeholder="Last name" />
-          <input type="email" placeholder="Email address" />
-          <textarea placeholder="Type review..." />
+          <input type="text" placeholder={t("pages.product.reviews.core.fields.first_name")} />
+          <input type="text" placeholder={t("pages.product.reviews.core.fields.last_name")} />
+          <input type="email" placeholder={t("pages.product.reviews.core.fields.email")} />
+          <textarea placeholder={t("pages.product.reviews.core.fields.review")} />
           <Upload />
         </div>
         <div className="actions-box">
           <button className="icon" onClick={() => setReviewModal(false)}>
-            Cancel
+            {t("pages.product.reviews.core.actions.cancel")}
           </button>
-          <button className="primary">Save</button>
+          <button className="primary">
+            {t("pages.product.reviews.core.actions.save")}
+          </button>
         </div>
       </div>
     );
@@ -44,9 +48,9 @@ export default function Reviews() {
   return (
     <div className="reviews-area">
       <div className="reviews-head">
-        <h3>Customer reviews</h3>
+        <h3>{t("pages.product.reviews.head.title")}</h3>
         <button onClick={() => setReviewModal(true)} className="primary">
-          Add your review <Icon name="plus" />
+          {t("pages.product.reviews.head.action")} <Icon name="plus" />
         </button>
         <button onClick={() => setReviewModal(true)} className="icon">
           <Icon name="plus" />
@@ -56,15 +60,15 @@ export default function Reviews() {
 
       <div className="review-form">
         <ModalSticky
-          title="How is your order?"
-          subtitle="Please take a moment to rate and review"
+          title={t("pages.product.reviews.core.title")}
+          subtitle={t("pages.product.reviews.core.subtitle")}
           isOpen={reviewModal}
           setModal={setReviewModal}>
           <ReviewCore />
         </ModalSticky>
         <ModalFull
-          title="How is your order?"
-          subtitle="Please take a moment to rate and review"
+          title={t("pages.product.reviews.core.title")}
+          subtitle={t("pages.product.reviews.core.subtitle")}
           isOpen={reviewModal}
           width="500px"
           setModal={setReviewModal}>
