@@ -5,8 +5,11 @@ import ProductsList from "@/views/components/sections/products/list";
 import ProductReviews from "@/views/components/sections/products/reviews";
 import Box from "@/views/components/sections/box";
 import Content from "@/views/components/sections/content";
+import { useTranslation } from "react-i18next";
 
 export default function Home() {
+  const { t } = useTranslation();
+
   return (
     <div className="home-page">
       <section className="slider-area">
@@ -23,12 +26,12 @@ export default function Home() {
         <Collections />
         <Content />
         <ProductsList
-          title="New arrivals"
-          subtitle="Our new arrivals are built to withstand your activities while keeping you looking your best!"
+          title={t("pages.home.partials.product_list.title")}
+          subtitle={t("pages.home.partials.product_list.subtitle")}
         />
         <ProductReviews
-          title="Real reviews, Real style"
-          subtitle="Customer reviews on the styles they can’t get enough of."
+          title={t("pages.home.partials.product_reviews.title")}
+          subtitle={t("pages.home.partials.product_reviews.subtitle")}
         />
       </section>
     </div>
