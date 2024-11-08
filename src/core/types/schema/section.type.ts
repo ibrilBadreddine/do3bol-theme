@@ -1,5 +1,6 @@
 export interface SectionDefinition {
   id: AvailableSections;
+  description: string;
   is_visible: boolean;
   settings: Setting[];
 }
@@ -12,32 +13,17 @@ interface BaseSetting {
 }
 
 // Setting types
-export type Setting =
-  | RadioSetting<boolean>
-  | SliderSetting
-  | SelectSetting<string>
-  | InputSetting<string>;
+export type Setting = SwitchSetting<boolean> | SelectSetting<string>;
 
 // Specific Setting Types
-interface RadioSetting<T> extends BaseSetting {
-  type: "radio";
+export interface SwitchSetting<T> extends BaseSetting {
+  type: "switch";
   value: T;
 }
 
-interface SliderSetting extends BaseSetting {
-  type: "slider";
-  value: Dimension;
-}
-
-interface SelectSetting<T> extends BaseSetting {
+export interface SelectSetting<T> extends BaseSetting {
   type: "select";
   options: Option<T>[];
-  value: T;
-}
-
-interface InputSetting<T> extends BaseSetting {
-  type: "input";
-  placeholder?: string;
   value: T;
 }
 
@@ -50,9 +36,8 @@ export type AvailableSections =
   | "product-list"
   | "product-reviews";
 
-type CSSUnit = "px" | "%" | "em" | "rem" | "vh" | "vw";
-type Dimension = `${number}${CSSUnit}`;
 interface Option<T> {
   label: string;
   value: T;
+  icon?: "fit" | "full";
 }

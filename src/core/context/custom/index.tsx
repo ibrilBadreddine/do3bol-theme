@@ -11,7 +11,7 @@ import VARIANTS_SCHEMA from "./schema/variants.schema";
 import type { CustomContextType, ThemeDefinition } from "@/core/types";
 import type {
   AvailableSections,
-  Setting,
+  SectionDefinition,
 } from "@/core/types/schema/section.type";
 import type { AvailableVariants } from "@/core/types/schema/variant.type";
 
@@ -23,10 +23,17 @@ export const CustomizationProvider = ({
   children: ReactNode;
 }) => {
   const { i18n } = useTranslation();
-  const [theme, setTheme] = useState<ThemeDefinition>({
+  const itemType = window.location.pathname.includes("product")
+    ? "variants"
+    : "sections";
+
+  const [baseTheme, setBaseTheme] = useState<ThemeDefinition>({
     sections: SECTIONS_SCHEMA,
     variants: VARIANTS_SCHEMA,
+    selected_item:
+      itemType === "variants" ? VARIANTS_SCHEMA[0].id : SECTIONS_SCHEMA[0].id,
   });
+  const [theme, setTheme] = useState<ThemeDefinition>(baseTheme);
 
   /**
    *
@@ -80,20 +87,36 @@ export const CustomizationProvider = ({
 
   /**
    *
-   * @param section_id
-   * @param new_settings
+   * @param section
+   * @param setting_id
+   * @param setting_value
    */
-  const setSettings = useCallback(
-    (section_id: AvailableSections, new_settings: Setting[]) => {
+  const setSetting = useCallback(
+    (
+      section: SectionDefinition,
+      setting_id: string,
+      setting_value: boolean | string
+    ) => {
       setTheme((prevTheme) => ({
         ...prevTheme,
-        sections: prevTheme.sections.map((s) =>
-          s.id === section_id ? { ...s, settings: new_settings } : s
+        sections: prevTheme.sections.map((sec) =>
+          sec.id === section.id
+            ? {
+                ...sec,
+                settings: sec.settings.map((set: any) =>
+                  set.id === setting_id ? { ...set, value: setting_value } : set
+                ),
+              }
+            : sec
         ),
       }));
     },
     []
   );
+
+  const setItem = (item_id: AvailableSections | AvailableVariants) => {
+    setTheme({ ...theme, selected_item: item_id });
+  };
 
   /**
    *
@@ -109,12 +132,21 @@ export const CustomizationProvider = ({
   // TODO: setColor function()
 
   useEffect(() => {
+    setLanguage("en");
     console.log("Theme updated:", theme);
   }, [theme]);
 
   return (
     <CustomContext.Provider
-      value={{ theme, setLanguage, setOrder, setSettings, setVisibility }}>
+      value={{
+        theme,
+        setItem,
+        setLanguage,
+        setOrder,
+        setSetting,
+        setVisibility,
+      }}>
+      {/* <button onClick={()=> setLanguage("ar")}>s</button> */}
       {children}
     </CustomContext.Provider>
   );

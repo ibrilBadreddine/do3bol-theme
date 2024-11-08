@@ -1,7 +1,6 @@
 import type {
   AvailableSections,
   SectionDefinition,
-  Setting,
 } from "./schema/section.type";
 import type {
   AvailableVariants,
@@ -25,12 +24,18 @@ export interface ProductDefinition {
 export interface ThemeDefinition {
   sections: SectionDefinition[];
   variants: VariantsDefinition[];
+  selected_item: AvailableSections | AvailableVariants;
 }
 
 export interface CustomContextType {
   theme: ThemeDefinition;
   setLanguage: (lang: "en" | "ar") => void;
-  setSettings: (section_id: AvailableSections, new_settings: Setting[]) => void;
+  setItem: (item_id: AvailableSections | AvailableVariants) => void;
+  setSetting: (
+    section: SectionDefinition,
+    setting_id: string,
+    setting_value: boolean | string
+  ) => void;
   setOrder: <T extends "section" | "variant">(
     type: T,
     item_id: T extends "section" ? AvailableSections : AvailableVariants,
