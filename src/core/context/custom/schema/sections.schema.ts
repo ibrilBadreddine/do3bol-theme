@@ -3,14 +3,14 @@ import type { SectionDefinition } from "@/core/types/schema/section.type";
 const SECTIONS_SCHEMA: SectionDefinition[] = [
   {
     id: "slider",
+    description: "Carousel to display key visuals",
     is_visible: true,
     settings: [
-      { id: "auto_move", label: "Auto move:", type: "radio", value: false },
-      { id: "height", label: "Height:", type: "slider", value: "80vh" },
+      { id: "auto_move", label: "Auto move:", type: "switch", value: false },
       {
         id: "show_content",
         label: "Show content:",
-        type: "radio",
+        type: "switch",
         value: false,
       },
       {
@@ -18,8 +18,8 @@ const SECTIONS_SCHEMA: SectionDefinition[] = [
         label: "Choose style:",
         type: "select",
         options: [
-          { label: "Fit", value: "fit" },
-          { label: "Full", value: "full" },
+          { label: "Fit", value: "fit", icon: "fit" },
+          { label: "Full", value: "full", icon: "full" },
         ],
         value: "fit",
       },
@@ -27,33 +27,34 @@ const SECTIONS_SCHEMA: SectionDefinition[] = [
   },
   {
     id: "box",
+    description: "Highlight important info or links",
     is_visible: true,
     settings: [
       {
         id: "headlines",
         label: "Show headlines",
-        type: "radio",
+        type: "switch",
         value: false,
       },
     ],
   },
   {
     id: "content",
+    description: "Rich text area for stories or updates",
     is_visible: true,
-    settings: [
-      {
-        id: "text",
-        label: "Content:",
-        type: "input",
-        placeholder: "Type content...",
-        value: "",
-      },
-    ],
+    settings: [],
   },
   {
     id: "collections",
+    description: "Curated product group display",
     is_visible: true,
     settings: [
+      {
+        id: "headlines",
+        label: "Show headline:",
+        type: "switch",
+        value: false,
+      },
       {
         id: "collection_id",
         label: "Choose collection",
@@ -65,44 +66,40 @@ const SECTIONS_SCHEMA: SectionDefinition[] = [
         ],
         value: "man",
       },
-      {
-        id: "headlines",
-        label: "Show headline:",
-        type: "radio",
-        value: false,
-      },
     ],
   },
   {
     id: "product-list",
+    description: "Showcase a list of featured products",
     is_visible: true,
     settings: [
+      {
+        id: "headlines",
+        label: "Show headline:",
+        type: "switch",
+        value: false,
+      },
       {
         id: "style",
         label: "Choose style:",
         type: "select",
         options: [
-          { label: "value", value: "value" },
+          { label: "Default", value: "default" },
           { label: "With button", value: "with-button" },
         ],
-        value: "value",
-      },
-      {
-        id: "headlines",
-        label: "Show headline:",
-        type: "radio",
-        value: false,
+        value: "default",
       },
     ],
   },
   {
     id: "product-reviews",
+    description: "Customer feedback highlights",
     is_visible: true,
     settings: [
       {
         id: "headlines",
         label: "Show headline:",
-        type: "radio",
+        type: "switch",
         value: false,
       },
     ],
