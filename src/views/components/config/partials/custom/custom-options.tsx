@@ -27,9 +27,9 @@ export default function CustomOptions() {
       .replace("product-", section_id === "product-list" ? "Products" : " ")
       .replace("list", "");
   return (
-    <div className="sections">
+    <div className="options">
       {theme[itemType].map((section) => (
-        <div key={section.id} className="section-box">
+        <div key={section.id} className="option-box">
           <button
             className={`box-shape icon ${section.id}`}
             data-selected={section.id === theme.selected_item}

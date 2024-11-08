@@ -12,17 +12,17 @@ export default function Custom() {
           <h4>Customize Theme</h4>
           <p>Make this theme uniquely yours</p>
         </div>
-        <button className="reset-btn icon">
+        {/* <button className="reset-btn icon">
           <Icon name="spinner" />
-        </button>
+        </button> */}
       </div>
       {/* Core */}
       <div className="custom-core">
-        <div className="core-section">
+        <div className="core-item">
           <CustomOptions />
           <CustomEditor />
         </div>
-        <div className="core-variant"></div>
+        <div className="core-reorder"></div>
       </div>
       {/* Footer */}
       <div className="custom-footer">

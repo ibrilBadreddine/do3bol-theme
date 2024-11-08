@@ -22,7 +22,7 @@ export default function CustomEditor() {
       .replace("product-", section_id === "product-list" ? "Products" : " ")
       .replace("list", "");
   return (
-    <div className="editor sections-editor">
+    <div className="editor">
       {/* Head */}
       <div className="editor-head">
         <div className="headlines">

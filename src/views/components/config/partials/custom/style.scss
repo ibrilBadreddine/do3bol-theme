@@ -25,18 +25,18 @@
   .custom-core {
     height: 100%;
     margin-top: 1em;
-    .core-section {
+    .core-item {
       display: grid;
       gap: 2em;
       height: 100%;
       grid-template-columns: 300px auto;
       // Sections
-      .sections {
+      .options {
         display: grid;
         gap: 1em;
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(3, 1fr);
-        .section-box {
+        .option-box {
           display: flex;
           flex-direction: column;
           gap: 0.5em;
