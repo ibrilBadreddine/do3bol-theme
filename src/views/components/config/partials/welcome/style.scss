@@ -1,0 +1,39 @@
+.welcome-area {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 3em;
+  height: 100%;
+  .welcome-content {
+    text-align: center;
+    h2 {
+      font-size: 20px;
+    }
+    p {
+      font-size: 13px;
+      color: var(--gray-500);
+    }
+  }
+  .welcome-options {
+    display: grid;
+    gap: 1em;
+    color: var(--gray-500);
+    grid-template-columns: repeat(2, 1fr);
+    button {
+      gap: 1em;
+      flex-direction: column;
+      padding: 2em 0;
+      span {
+        text-transform: uppercase;
+        font-size: 14px;
+      }
+      img {
+        width: 150px;
+        transition: var(--transition-duration);
+      }
+      &:hover img {
+        scale: 1.1;
+      }
+    }
+  }
+}

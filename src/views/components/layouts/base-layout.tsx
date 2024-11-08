@@ -3,6 +3,7 @@ import Header from "./partials/_header";
 import Footer from "./partials/_footer";
 import { useLayoutEffect } from "react";
 import { Outlet, useLocation } from "react-router-dom";
+import ConfigPanel from "@components/config";
 
 export default function Layout() {
   const location = useLocation();
@@ -15,6 +16,7 @@ export default function Layout() {
       <Header />
       <Outlet />
       <Footer />
+      <ConfigPanel />
     </div>
   );
 }
