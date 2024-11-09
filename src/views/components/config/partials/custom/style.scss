@@ -17,20 +17,34 @@
         font-size: 13px;
       }
     }
-    .save-btn {
-      padding: 10px;
+    .tabs {
+      display: flex;
+      align-items: center;
+      gap: 2px;
+      background-color: var(--gray-50);
+      padding: 2px;
+      border-radius: var(--radius-sm);
+      box-shadow: inset rgba(99, 99, 99, 0.1) 0px 2px 8px 0px;
+      button {
+        padding: 8px 12px;
+        background-color: transparent;
+        border-radius: var(--radius-sm);
+        &[data-active-tab$="true"] {
+          background-color: var(--base-white);
+        }
+      }
     }
   }
   // Core
   .custom-core {
     height: 100%;
     margin-top: 1em;
-    .core-item {
+    .core-items {
       display: grid;
       gap: 2em;
       height: 100%;
       grid-template-columns: 300px auto;
-      // Sections
+      // Options
       .options {
         display: grid;
         gap: 1em;
@@ -186,6 +200,7 @@
           }
         }
       }
+      // Editor
       .editor {
         display: flex;
         flex-direction: column;
@@ -238,6 +253,104 @@
                   color: var(--base-white);
                   background-color: var(--base-black);
                 }
+              }
+            }
+          }
+        }
+      }
+    }
+    // Reorder
+    .core-reorder {
+      display: grid;
+      gap: 2em;
+      height: 100%;
+      grid-template-columns: 300px auto;
+      .reorder-items {
+        display: grid;
+        grid-template-rows: repeat(6, 1fr);
+        gap: 1em;
+        .item-box {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          text-transform: capitalize;
+          font-size: 13px;
+        }
+      }
+      .reorder-preview {
+        border: 1px solid var(--gray-50);
+        border-radius: var(--radius-md);
+        display: flex;
+        flex-direction: column;
+        .preview-head {
+          padding: 0.5em 1em;
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          border-bottom: 1px solid var(--gray-50);
+          box-shadow: rgba(166, 166, 166, 0.15) 0px 48px 100px 0px;
+          .points {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            .point {
+              width: 10px;
+              height: 10px;
+              clip-path: circle();
+              background-color: var(--error-500);
+              &:nth-child(2) {
+                background-color: rgb(255, 196, 0);
+              }
+              &:nth-child(3) {
+                background-color: rgb(28, 225, 133);
+              }
+            }
+          }
+          .title {
+            font-size: 12px;
+            color: var(--gray-500);
+            background-color: var(--gray-50);
+            width: fit-content;
+            padding: 5px 20px;
+            border-radius: var(--radius-sm);
+          }
+        }
+        .preview-core {
+          height: 100%;
+          padding: 1em 10%;
+          &:has(.shape-product) {
+            display: grid;
+            gap: 1em;
+            grid-template-columns: 30% auto;
+            .shape-product {
+              border: 1px dashed gainsboro;
+              height: 30%;
+              border-radius: var(--radius-sm);
+            }
+          }
+          .shape-items {
+            display: grid;
+            grid-template-rows: repeat(6, 1fr);
+            gap: 1em;
+            height: 100%;
+            .preview-shape {
+              position: relative;
+              border-radius: var(--radius-sm);
+              border: 1px dashed gainsboro;
+              &:nth-child(even) {
+                background-color: var(--gray-50);
+                .badge {
+                  background-color: gainsboro;
+                }
+              }
+              .badge {
+                position: absolute;
+                font-size: 10px;
+                padding: 5px 10px;
+                text-transform: capitalize;
+                color: var(--gray-500);
+                background-color: var(--gray-50);
+                border-start-start-radius: var(--radius-sm);
+                border-end-end-radius: var(--radius-sm);
               }
             }
           }

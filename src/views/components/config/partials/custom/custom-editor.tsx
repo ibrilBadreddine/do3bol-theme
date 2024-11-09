@@ -17,9 +17,9 @@ export default function CustomEditor() {
   const handleVisibility = () =>
     setVisibility(itemType, theme.selected_item, !currentItem?.is_visible);
 
-  const formatNaming = (section_id: string) =>
-    section_id
-      .replace("product-", section_id === "product-list" ? "Products" : " ")
+  const formatNaming = (item_id: string) =>
+    item_id
+      .replace("product-", item_id === "product-list" ? "Products" : " ")
       .replace("list", "");
   return (
     <div className="editor">
