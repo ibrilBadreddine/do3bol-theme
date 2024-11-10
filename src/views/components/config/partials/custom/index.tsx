@@ -5,8 +5,8 @@ import CustomEditor from "./custom-editor";
 import CustomOptions from "./custom-options";
 import CustomReorder from "./custom-reorder";
 
-export default function Custom() {
-  const [isSettings, setState] = useState<boolean>(false);
+const Custom: React.FC<{ setStep: (step: number) => void }> = ({ setStep }) => {
+  const [isSettings, setState] = useState<boolean>(true);
 
   return (
     <div className="custom-area">
@@ -44,7 +44,9 @@ export default function Custom() {
       </div>
       {/* Footer */}
       <div className="custom-footer">
-        <button className="icon">Back</button>
+        <button onClick={() => setStep(1)} className="icon">
+          Back
+        </button>
         <button className="primary">
           <Icon name="save" />
           Save
@@ -52,4 +54,6 @@ export default function Custom() {
       </div>
     </div>
   );
-}
+};
+
+export default Custom;

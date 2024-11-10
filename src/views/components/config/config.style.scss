@@ -12,11 +12,37 @@
     border-radius: var(--radius-xl);
     background-color: var(--base-white);
     transition: var(--transition-duration);
+    .welcome-area,
+    .custom-area {
+      animation: open 0.3s linear;
+      @keyframes open {
+        0% {
+          visibility: hidden;
+          opacity: 0;
+        }
+        100% {
+          visibility: visible;
+          opacity: 1;
+        }
+      }
+    }
     &[data-step$="0"] {
+      bottom: 0%;
+      width: 50px;
+      height: 40px;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+      background-color: #ffffff46;
+      backdrop-filter: blur(2px);
+      box-shadow: inset rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    }
+    &[data-step$="1"] {
       width: 600px;
       height: 50%;
     }
-    &[data-step$="1"] {
+    &[data-step$="2"] {
       width: 800px;
       height: 70%;
     }
