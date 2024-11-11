@@ -16,7 +16,7 @@ const Welcome: React.FC<{ setStep: (step: number) => void }> = ({
           <img src={Step1} alt="step 1" />
           <span>Explore</span>
         </button>
-        <button onClick={() => setStep(2)} className="icon xl">
+        <button onClick={() => setStep(4)} className="icon xl">
           <img src={Step2} alt="step 2" />
           <span>Customize</span>
         </button>

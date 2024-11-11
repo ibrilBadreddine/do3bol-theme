@@ -38,11 +38,13 @@
       backdrop-filter: blur(2px);
       box-shadow: inset rgba(0, 0, 0, 0.1) 0px 4px 12px;
     }
-    &[data-step$="1"] {
+    &[data-step$="1"],
+    &[data-step$="2"] {
       width: 600px;
       height: 50%;
     }
-    &[data-step$="2"] {
+    &[data-step$="3"],
+    &[data-step$="4"] {
       width: 800px;
       height: 70%;
     }

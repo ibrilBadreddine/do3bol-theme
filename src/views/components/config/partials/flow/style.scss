@@ -1,0 +1,189 @@
+.flow-area {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  // Options
+  .flow-options {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    height: 100%;
+    .options-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .headlines {
+        display: grid;
+        gap: 5px;
+        p {
+          color: var(--gray-500);
+          font-size: 13px;
+        }
+      }
+    }
+    .options-core {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 1em;
+      .opts {
+        display: grid;
+        gap: 1em;
+        width: 100%;
+        .opt {
+          display: flex;
+          align-items: center;
+          gap: 1em;
+          svg {
+            padding: 1.2em;
+            border-radius: var(--radius-sm);
+            color: var(--gray-500);
+            border: 1px solid gainsboro;
+          }
+          .opt-info {
+            display: grid;
+            gap: 5px;
+            text-align: start;
+            p {
+              font-size: 12px;
+              color: var(--gray-500);
+            }
+          }
+          &[data-active-flow$="true"] {
+            border-color: var(--base-black);
+            svg {
+              color: var(--base-white);
+              background-color: var(--base-black);
+            }
+          }
+        }
+      }
+    }
+  }
+  // Timeline
+  .flow-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 4em;
+    height: 100%;
+    .timeline-progress {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1em;
+      .progress-bar {
+        height: 5px;
+        width: 100%;
+        background-color: var(--gray-50);
+        border-radius: var(--radius-xl);
+        box-shadow: inset rgba(156, 156, 156, 0.1) 0px 7px 29px 0px;
+        transition: var(--transition-duration);
+        &:is(.active-bar) {
+          background-color: var(--base-black);
+          width: 200%;
+        }
+      }
+    }
+    .timeline-core {
+      display: grid;
+      grid-template-columns: 50% auto;
+      gap: 2em;
+      .tasks {
+        display: grid;
+        gap: 70px;
+        .task-box {
+          display: flex;
+          align-items: start;
+          gap: 1em;
+          .task-index {
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            padding: 12px 15px;
+            justify-content: center;
+            background-color: transparent;
+            color: var(--gray-500);
+            border: 2px dotted gainsboro;
+            position: relative;
+            &:hover {
+              background-color: var(--gray-50);
+            }
+            &:is(.active-index) {
+              padding: 0 12px;
+              color: var(--base-white);
+              border-color: var(--base-black);
+              background-color: var(--base-black);
+              &::before {
+                background-color: var(--base-black) !important;
+              }
+            }
+          }
+          &:not(:last-child) .task-index::before {
+            content: "";
+            height: 80px;
+            width: 2px;
+            background-color: var(--gray-50);
+            position: absolute;
+            top: 120%;
+          }
+          .task-info {
+            display: grid;
+            gap: 5px;
+            span {
+              font-size: 14px;
+            }
+            p {
+              color: var(--gray-500);
+              font-size: 12px;
+            }
+          }
+        }
+      }
+      .score {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1em;
+        .score-box {
+          width: 200px;
+          height: 200px;
+          border: 20px solid var(--gray-50);
+          border-bottom-color: var(--base-black);
+          border-radius: 50%;
+          display: inline-block;
+          box-sizing: border-box;
+          rotate: 135deg;
+          position: relative;
+          &::before {
+            content: "25%";
+            position: absolute;
+            translate: -50% -50%;
+            left: 50%;
+            top: 50%;
+            rotate: -135deg;
+            font-size: 20px;
+            color: var(--gray-500);
+          }
+        }
+        .score-value {
+          font-size: 13px;
+          color: var(--gray-500);
+        }
+      }
+    }
+  }
+  // Actions
+  .flow-actions {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    gap: 1em;
+    button {
+      width: 25%;
+      justify-content: center;
+    }
+  }
+}

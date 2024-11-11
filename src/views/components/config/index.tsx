@@ -3,6 +3,7 @@ import { useState } from "react";
 import Welcome from "./partials/welcome";
 import Custom from "./partials/custom";
 import Action from "./partials/action";
+import Flow from "./partials/flow";
 
 export default function ConfigPanel() {
   const [step, setStep] = useState<number>(0);
@@ -14,6 +15,8 @@ export default function ConfigPanel() {
           <Action setStep={setStep} />
         ) : step === 1 ? (
           <Welcome setStep={setStep} />
+        ) : step === 2 || step === 3 ? (
+          <Flow currentStep={step} setStep={setStep} />
         ) : (
           <Custom setStep={setStep} />
         )}
