@@ -4,9 +4,12 @@ import Icon from "@components/shared/icons";
 import CustomEditor from "./custom-editor";
 import CustomOptions from "./custom-options";
 import CustomReorder from "./custom-reorder";
+import CustomStyle from "./custom-style";
 
 const Custom: React.FC<{ setStep: (step: number) => void }> = ({ setStep }) => {
-  const [isSettings, setState] = useState<boolean>(true);
+  const [customize, setCustomize] = useState<"settings" | "reorder" | "style">(
+    "settings"
+  );
 
   return (
     <div className="custom-area">
@@ -18,28 +21,36 @@ const Custom: React.FC<{ setStep: (step: number) => void }> = ({ setStep }) => {
         </div>
         <div className="tabs">
           <button
-            onClick={() => setState(true)}
+            onClick={() => setCustomize("settings")}
             className="settings-tab"
-            data-active-tab={isSettings}>
+            data-active-tab={customize === "settings"}>
             <Icon name="settings" size={15} />
           </button>
           <button
-            onClick={() => setState(false)}
+            onClick={() => setCustomize("reorder")}
             className="reorder-tab"
-            data-active-tab={!isSettings}>
+            data-active-tab={customize === "reorder"}>
             <Icon name="queue_list" size={15} />
+          </button>
+          <button
+            onClick={() => setCustomize("style")}
+            className="settings-tab"
+            data-active-tab={customize === "style"}>
+            <Icon name="style" size={15} />
           </button>
         </div>
       </div>
       {/* Core */}
       <div className="custom-core">
-        {isSettings ? (
+        {customize === "settings" ? (
           <div className="core-items">
             <CustomOptions />
             <CustomEditor />
           </div>
-        ) : (
+        ) : customize === "reorder" ? (
           <CustomReorder />
+        ) : (
+          <CustomStyle />
         )}
       </div>
       {/* Footer */}

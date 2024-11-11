@@ -14,7 +14,10 @@ const Flow: React.FC<{
         <button onClick={() => setStep(currentStep - 1)} className="icon">
           Back
         </button>
-        <button onClick={() => setStep(3)} className="primary">
+        <button
+          onClick={() => setStep(3)}
+          disabled={currentStep === 3}
+          className="primary">
           Next
           <Icon name="chevron_right" />
         </button>

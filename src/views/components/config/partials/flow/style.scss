@@ -86,6 +86,14 @@
         }
       }
     }
+    .i-m-done {
+      display: grid;
+      align-items: center;
+      justify-items: center;
+      height: 100%;
+      text-transform: uppercase;
+
+    }
     .timeline-core {
       display: grid;
       grid-template-columns: 50% auto;

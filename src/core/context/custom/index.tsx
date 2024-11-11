@@ -129,10 +129,38 @@ export const CustomizationProvider = ({
     core.setAttribute("dir", lang === "ar" ? "rtl" : "ltr");
   };
 
+  /**
+   *
+   * @param color
+   */
+  const setColor = (color: string) => {
+    const core = document.documentElement;
+    core.style.setProperty("--base-black", color ?? "#121212");
+  };
+
+  /**
+   *
+   * @param radius
+   */
+  const setRadius = (radius: "sm" | "md" | "lg") => {
+    const values = {
+      sm: { sm: "2px", md: "4px", lg: "6px", xl: "8px", "2xl": "12px" },
+      md: { sm: "0.5em", md: "0.7em", lg: "1em", xl: "1.5em", "2xl": "2em" },
+      lg: { sm: "1em", md: "2em", lg: "3em", xl: "4em", "2xl": "6em" },
+    };
+    const value = values[radius];
+    const core = document.documentElement;
+    core.style.setProperty("--radius-sm", value.sm);
+    core.style.setProperty("--radius-md", value.md);
+    core.style.setProperty("--radius-lg", value.lg);
+    core.style.setProperty("--radius-xl", value.xl);
+    core.style.setProperty("--radius-2xl", value["2xl"]);
+  };
+
   // TODO: setColor function()
 
   useEffect(() => {
-    setLanguage("en");
+    setLanguage(i18n.language);
     console.log("Theme updated:", theme);
   }, [theme]);
 
@@ -142,11 +170,12 @@ export const CustomizationProvider = ({
         theme,
         setItem,
         setLanguage,
+        setColor,
+        setRadius,
         setOrder,
         setSetting,
         setVisibility,
       }}>
-      {/* <button onClick={()=> setLanguage("ar")}>s</button> */}
       {children}
     </CustomContext.Provider>
   );

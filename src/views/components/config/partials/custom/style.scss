@@ -357,6 +357,61 @@
         }
       }
     }
+    // Style
+    .core-style {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2em;
+      .field {
+        display: grid;
+        gap: 0.5em;
+        label {
+          font-size: 13px;
+          color: var(--gray-500);
+        }
+        .options {
+          display: flex;
+          align-items: center;
+          gap: 0.5em;
+          button {
+            font-size: 12px;
+            padding: 8px 15px;
+            &[data-active-opt$="true"] {
+              color: var(--base-white);
+              background-color: var(--base-black);
+            }
+          }
+          .color {
+            padding: 0;
+            width: 35px;
+            height: 35px;
+            border-radius: var(--radius-sm);
+            outline: 1px solid var(--gray-50);
+            border: 1px solid var(--base-white);
+            &[data-active-opt$="true"] {
+              outline-color: var(--base-black);
+            }
+          }
+          .radius {
+            padding: 8px;
+            .border {
+              width: 50px;
+              height: 20px;
+              border: 2px dotted gainsboro;
+              &:is(.sm) {
+                border-radius: 2px;
+              }
+              &:is(.md) {
+                border-radius: var(--radius-sm);
+              }
+              &:is(.lg) {
+                border-radius: var(--radius-2xl);
+              }
+            }
+          }
+        }
+      }
+    }
   }
   // Footer
   .custom-footer {

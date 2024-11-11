@@ -36,7 +36,10 @@ export default function FlowTimeline() {
           />
         ))}
       </div>
-      <div className="timeline-core">
+      <div className="i-m-done">
+        <h1>3gezt... 😔</h1>
+      </div>
+      {/* <div className="timeline-core">
         <div className="tasks">
           {TASKS.map((item, i) => (
             <div className="task-box" key={i}>
@@ -56,7 +59,7 @@ export default function FlowTimeline() {
           <div className="score-box"></div>
           <span className="score-value">1 / 4</span>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }

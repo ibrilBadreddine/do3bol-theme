@@ -30,6 +30,8 @@ export interface ThemeDefinition {
 export interface CustomContextType {
   theme: ThemeDefinition;
   setLanguage: (lang: "en" | "ar") => void;
+  setColor: (color: string) => void;
+  setRadius: (radius: string) => void;
   setItem: (item_id: AvailableSections | AvailableVariants) => void;
   setSetting: (
     section: SectionDefinition,
