@@ -34,6 +34,23 @@ export const CustomizationProvider = ({
       itemType === "variants" ? VARIANTS_SCHEMA[0].id : SECTIONS_SCHEMA[0].id,
   });
   const [theme, setTheme] = useState<ThemeDefinition>(baseTheme);
+  const isChanged = !(
+    JSON.stringify(baseTheme.sections) === JSON.stringify(theme.sections) &&
+    JSON.stringify(baseTheme.variants) === JSON.stringify(theme.variants)
+  );
+
+  /**
+   *
+   * @param item_id
+   */
+  const getSetting = (
+    item_id: AvailableSections | AvailableVariants,
+    setting_id: string
+  ) => {
+    return baseTheme.sections
+      .find((item) => item.id === item_id)
+      ?.settings.find((setting) => setting.id === setting_id);
+  };
 
   /**
    *
@@ -157,17 +174,25 @@ export const CustomizationProvider = ({
     core.style.setProperty("--radius-2xl", value["2xl"]);
   };
 
-  // TODO: setColor function()
+  const save = () => {
+    if (isChanged) setBaseTheme(theme);
+  };
 
   useEffect(() => {
     setLanguage(i18n.language);
     console.log("Theme updated:", theme);
+
+    // console.log(isChanged);
   }, [theme]);
 
   return (
     <CustomContext.Provider
       value={{
         theme,
+        baseTheme,
+        getSetting,
+        isChanged,
+        save,
         setItem,
         setLanguage,
         setColor,

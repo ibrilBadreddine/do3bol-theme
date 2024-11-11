@@ -1,21 +1,25 @@
 .content-container {
-  font-size: 40px;
   text-align: justify;
   height: 60vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  h1 {
+    font-size: 60px;
+  }
 }
 
 @media (max-width: 1250px) {
-  .content-container {
+  .content-container h1 {
     font-size: 35px;
   }
 }
 
 @media (max-width: 766px) {
   .content-container {
-    text-align: center;
-    font-size: 25px;
+    height: auto;
+    h1 {
+      text-align: center;
+    }
   }
 }

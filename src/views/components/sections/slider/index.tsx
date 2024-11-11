@@ -6,6 +6,7 @@ import SliderV1 from "@/assets/images/slider.jpg";
 import SliderV2 from "@/assets/images/slider-v2.jpg";
 import SliderV3 from "@/assets/images/slider-v3.jpg";
 import { useTranslation } from "react-i18next";
+import { useCustom } from "@/core/context";
 
 const Slider: React.FC<SliderDefinition> = ({
   orientation,
@@ -16,6 +17,7 @@ const Slider: React.FC<SliderDefinition> = ({
   height = "500px",
 }) => {
   const { t, i18n } = useTranslation();
+  const { getSetting } = useCustom();
 
   const ITEMS = [SliderV1, SliderV2, SliderV3];
 
@@ -61,7 +63,7 @@ const Slider: React.FC<SliderDefinition> = ({
                   alt={`Slide ${i}`}
                   loading="lazy"
                 />
-                {content && (
+                {content && getSetting("slider", "show_content")?.value && (
                   <div className="item-content">
                     <p>{t("sections.slider.title")}</p>
                     <button className="secondary">

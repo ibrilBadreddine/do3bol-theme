@@ -1,22 +1,11 @@
 .home-page {
+  margin: 2em 10% 5em 10%;
   display: grid;
-  .slider-area {
-    margin: 1em 5%;
-  }
-  .core-area {
-    margin: 5em 10%;
-    display: grid;
-    gap: 8em;
-  }
+  gap: 8em;
 }
 
 @media (max-width: 766px) {
   .home-page {
-    .slider-area {
-      margin: calc(1.5em / 2);
-    }
-    .core-area {
-      margin: 3em 1.5em;
-    }
+    margin: 3em 1.5em;
   }
 }

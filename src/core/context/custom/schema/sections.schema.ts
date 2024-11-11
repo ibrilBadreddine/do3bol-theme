@@ -6,7 +6,6 @@ const SECTIONS_SCHEMA: SectionDefinition[] = [
     description: "Carousel to display key visuals",
     is_visible: true,
     settings: [
-      { id: "auto_move", label: "Auto move:", type: "switch", value: false },
       {
         id: "show_content",
         label: "Show content:",
@@ -34,7 +33,7 @@ const SECTIONS_SCHEMA: SectionDefinition[] = [
         id: "headlines",
         label: "Show headlines",
         type: "switch",
-        value: false,
+        value: true,
       },
     ],
   },
@@ -53,7 +52,30 @@ const SECTIONS_SCHEMA: SectionDefinition[] = [
         id: "headlines",
         label: "Show headline:",
         type: "switch",
-        value: false,
+        value: true,
+      },
+    ],
+  },
+  {
+    id: "product-list",
+    description: "Showcase a list of featured products",
+    is_visible: true,
+    settings: [
+      {
+        id: "headlines",
+        label: "Show headline:",
+        type: "switch",
+        value: true,
+      },
+      {
+        id: "style",
+        label: "Choose style:",
+        type: "select",
+        options: [
+          { label: "Default", value: "default" },
+          { label: "With button", value: "with-button" },
+        ],
+        value: "default",
       },
       {
         id: "collection_id",
@@ -69,29 +91,6 @@ const SECTIONS_SCHEMA: SectionDefinition[] = [
     ],
   },
   {
-    id: "product-list",
-    description: "Showcase a list of featured products",
-    is_visible: true,
-    settings: [
-      {
-        id: "headlines",
-        label: "Show headline:",
-        type: "switch",
-        value: false,
-      },
-      {
-        id: "style",
-        label: "Choose style:",
-        type: "select",
-        options: [
-          { label: "Default", value: "default" },
-          { label: "With button", value: "with-button" },
-        ],
-        value: "default",
-      },
-    ],
-  },
-  {
     id: "product-reviews",
     description: "Customer feedback highlights",
     is_visible: true,
@@ -100,7 +99,7 @@ const SECTIONS_SCHEMA: SectionDefinition[] = [
         id: "headlines",
         label: "Show headline:",
         type: "switch",
-        value: false,
+        value: true,
       },
     ],
   },

@@ -31,7 +31,7 @@ export default function CustomStyle() {
     {
       id: "radius",
       label: "Radius:",
-      value: "sm",
+      value: "md",
       options: [
         { label: "Sm", value: "sm" },
         { label: "Md", value: "md" },

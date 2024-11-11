@@ -4,16 +4,20 @@ import Collection1 from "@/assets/images/man.jpg";
 import Collection2 from "@/assets/images/woman.jpg";
 import Collection3 from "@/assets/images/kids.jpg";
 import { useTranslation } from "react-i18next";
+import { useCustom } from "@/core/context";
 
 export default function Collections() {
   const { t } = useTranslation();
+  const { getSetting } = useCustom();
 
   return (
     <div className="collections-container">
-      <div className="section-headlines">
-        <h1>{t("sections.collections.title")}</h1>
-        <p>{t("sections.collections.subtitle")}</p>
-      </div>
+      {getSetting("collections", "headlines")?.value && (
+        <div className="section-headlines">
+          <h1>{t("sections.collections.title")}</h1>
+          <p>{t("sections.collections.subtitle")}</p>
+        </div>
+      )}
       <div className="collections-cards">
         <Link to="/collections" className="col-card">
           <img

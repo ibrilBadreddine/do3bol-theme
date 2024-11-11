@@ -1,22 +1,32 @@
+import { useRef, useState } from "react";
 import { useCustom } from "@/core/context";
 import Icon from "@components/shared/icons";
 
 export default function CustomReorder() {
-  const { theme } = useCustom();
-
+  const { theme, setOrder } = useCustom();
   const itemType = window.location.pathname.includes("product")
-    ? "variants"
-    : "sections";
+    ? "variant"
+    : "section";
 
   const formatNaming = (item_id: string) =>
     item_id
       .replace("product-", item_id === "product-list" ? "Products" : " ")
       .replace("list", "");
+
+  const dragFrom = useRef<number>(0);
+  const dragTo = useRef<number>(0);
   return (
     <div className="core-reorder">
       <div className="reorder-items">
-        {theme[itemType].map((item, i) => (
-          <button className="item-box icon" key={i}>
+        {theme[`${itemType}s`].map((item, i) => (
+          <button
+            key={i}
+            className="item-box icon"
+            draggable
+            onDragStart={() => (dragFrom.current = i)}
+            onDragEnter={() => (dragTo.current = i)}
+            onDragEnd={() => setOrder(itemType, item.id, dragTo.current)}
+            onDragOver={(e) => e.preventDefault()}>
             {formatNaming(item.id)}
             <Icon name="bars" />
           </button>
@@ -34,7 +44,7 @@ export default function CustomReorder() {
         <div className="preview-core">
           <div className="shape-product" />
           <div className="shape-items">
-            {theme[itemType].map((item, i) => (
+            {theme[`${itemType}s`].map((item, i) => (
               <div className="preview-shape" key={i}>
                 <span className="badge">{formatNaming(item.id)}</span>
               </div>

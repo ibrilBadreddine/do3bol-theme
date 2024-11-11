@@ -1,9 +1,11 @@
 import "./box.style.scss";
+import { useCustom } from "@/core/context";
 import Icon from "@components/shared/icons";
 import { useTranslation } from "react-i18next";
 
 export default function Box() {
   const { t } = useTranslation();
+  const { getSetting } = useCustom();
 
   const BOXES = [
     {
@@ -30,10 +32,12 @@ export default function Box() {
 
   return (
     <div className="box-container">
-      <div className="section-headlines">
-        <h1>{t("sections.box.title")}</h1>
-        <p>{t("sections.box.subtitle")}</p>
-      </div>
+      {getSetting("box", "headlines")?.value && (
+        <div className="section-headlines">
+          <h1>{t("sections.box.title")}</h1>
+          <p>{t("sections.box.subtitle")}</p>
+        </div>
+      )}
       <div className="boxes-cards">
         {BOXES.map((box, i) => (
           <div key={i} className="box-card">

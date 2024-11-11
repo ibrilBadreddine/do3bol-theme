@@ -2,6 +2,7 @@ import "./prod-reviews.style.scss";
 import Icon from "@/views/components/shared/icons";
 import type { ReviewDefinition } from "../products.type";
 import { useTranslation } from "react-i18next";
+import { useCustom } from "@/core/context";
 
 const ProductsReviews: React.FC<ReviewDefinition> = ({
   title,
@@ -10,6 +11,7 @@ const ProductsReviews: React.FC<ReviewDefinition> = ({
   gap = 2,
 }) => {
   const { t } = useTranslation();
+  const { getSetting } = useCustom();
 
   const REVIEWS = [
     {
@@ -36,7 +38,7 @@ const ProductsReviews: React.FC<ReviewDefinition> = ({
 
   return (
     <div className="product-reviews-container">
-      {title && (
+      {title && getSetting("product-reviews", "headlines")?.value && (
         <div className="section-headlines">
           <h1>{title}</h1>
           <p>{subtitle}</p>

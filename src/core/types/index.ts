@@ -1,6 +1,7 @@
 import type {
   AvailableSections,
   SectionDefinition,
+  Setting,
 } from "./schema/section.type";
 import type {
   AvailableVariants,
@@ -29,9 +30,16 @@ export interface ThemeDefinition {
 
 export interface CustomContextType {
   theme: ThemeDefinition;
+  baseTheme: ThemeDefinition;
+  isChanged: boolean;
+  save: () => void;
+  getSetting: (
+    item_id: AvailableSections | AvailableVariants,
+    setting_id: string
+  ) => Setting | undefined;
   setLanguage: (lang: "en" | "ar") => void;
   setColor: (color: string) => void;
-  setRadius: (radius: string) => void;
+  setRadius: (radius: "sm" | "md" | "lg") => void;
   setItem: (item_id: AvailableSections | AvailableVariants) => void;
   setSetting: (
     section: SectionDefinition,
