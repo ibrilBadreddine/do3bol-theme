@@ -48,10 +48,10 @@
         align-items: center;
         justify-content: center;
         gap: 1.5em;
-        button {
+        a {
           padding: 0;
           color: var(--gray-500);
-          &:first-child {
+          &:is(.active-link) {
             font-weight: 550;
             color: var(--base-black);
             text-decoration: underline;
@@ -76,10 +76,13 @@
           button {
             font-size: 13px;
             padding: 7px 12px;
-            &:first-child {
+            &:is(.active-sort) {
               border: 1px solid var(--base-black);
               background-color: var(--base-black);
               color: var(--base-white);
+            }
+            .sort-icon {
+              display: inline-flex;
             }
           }
         }
@@ -100,13 +103,16 @@
           display: flex;
           gap: 0.5em;
           flex-wrap: wrap;
-          button {
+          button, a {
             font-size: 13px;
             padding: 7px 12px;
-            &:first-child {
+            &:is(.active-sort) {
               border: 1px solid var(--base-black);
               background-color: var(--base-black);
               color: var(--base-white);
+            }
+            .sort-icon {
+              display: inline-flex;
             }
           }
         }

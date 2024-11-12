@@ -15,11 +15,11 @@ export default function Search() {
   const [sort, setSort] = useState<{
     field: "price" | "newest" | "a-z";
     order: "asc" | "desc";
-  }>({ field: "price", order: "asc" });
+  }>({ field: "newest", order: "asc" });
 
   const handleFilter = () => {
     const result = PRODUCTS.filter(
-      (prod) => prod.collection_id === collection_id
+      (prod) => (!collection_id || prod.collection_id === collection_id)
     );
     switch (sort.field) {
       case "a-z":
@@ -47,6 +47,7 @@ export default function Search() {
   );
 
   useEffect(() => {
+    console.log(sort)
     setProducts(handleFilter());
   }, [collection_id, sort]);
 
@@ -60,7 +61,7 @@ export default function Search() {
         </Link>
       </div>
       <div className="browsing-area">
-        <Filter products_length={filteredProducts.length} setSort={setSort} />
+        <Filter products_length={filteredProducts.length} sort={sort} setSort={setSort} />
         <Result products={filteredProducts} />
       </div>
     </div>

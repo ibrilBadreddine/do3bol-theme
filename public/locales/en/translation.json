@@ -151,7 +151,7 @@
       },
       "partials": {
         "filter": {
-          "count": "Showing 9 results",
+          "count": "Showing {{length}} results",
           "head": {
             "title": "Quick filters",
             "subtitle": "Filter collections & sort items"
@@ -219,7 +219,7 @@
       }
     },
     "dialog": {
-      "title": "Your're about to delete item",
+      "title": "You're about to delete item",
       "subtitle": "Are you sure you want to delete this item? This action cannot be undone.",
       "actions": {
         "cancel": "No, keep it",
