@@ -11,7 +11,7 @@ import { useNavigate } from "react-router-dom";
 const Cart = ({ isOpen, setModal }: CartDefinition) => {
   const { t } = useTranslation();
   const navigate = useNavigate();
-  const [cart, setCart] = useState<number>(3);
+  const [cart] = useState<number>(2);
   const [isDelete, setDelete] = useState<boolean>(false);
   
   return (
