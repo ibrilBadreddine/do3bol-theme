@@ -45,10 +45,12 @@ const ProductsList: React.FC<ListDefinition> = ({
                     {t(`sections.products.list.items.${product.id}`)}
                   </p>
                   <div className="prod-price">
-                    <span className="after">{product.price.after} MAD</span>
+                    <span className="after">
+                      {product.price.after} {t("common.currency")}
+                    </span>
                     {product.price.before && (
                       <span className="before">
-                        {product.price.before} MAD
+                        {product.price.before} {t("common.currency")}
                       </span>
                     )}
                   </div>
