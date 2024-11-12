@@ -5,12 +5,19 @@ import ProductsReviews from "@/views/components/sections/products/reviews";
 import ModalFull from "@/views/components/shared/modal/full";
 import ModalSticky from "@/views/components/shared/modal/sticky";
 import { useTranslation } from "react-i18next";
+import Toast from "@components/shared/toast";
 
 export default function Reviews() {
   const { t } = useTranslation();
   const [rating, setRating] = useState<number>(0);
   const [reviewModal, setReviewModal] = useState<boolean>(false);
+  const [hasError, setError] = useState<boolean>(false);
 
+  // TODO: Just for preview
+  const save = () => {
+    setReviewModal(false);
+    setError(true);
+  };
   const ReviewCore = () => {
     return (
       <div className="review-core">
@@ -27,17 +34,28 @@ export default function Reviews() {
           </div>
         </div>
         <div className="information-box">
-          <input type="text" placeholder={t("pages.product.reviews.core.fields.first_name")} />
-          <input type="text" placeholder={t("pages.product.reviews.core.fields.last_name")} />
-          <input type="email" placeholder={t("pages.product.reviews.core.fields.email")} />
-          <textarea placeholder={t("pages.product.reviews.core.fields.review")} />
+          <input
+            type="text"
+            placeholder={t("pages.product.reviews.core.fields.first_name")}
+          />
+          <input
+            type="text"
+            placeholder={t("pages.product.reviews.core.fields.last_name")}
+          />
+          <input
+            type="email"
+            placeholder={t("pages.product.reviews.core.fields.email")}
+          />
+          <textarea
+            placeholder={t("pages.product.reviews.core.fields.review")}
+          />
           <Upload />
         </div>
         <div className="actions-box">
           <button className="icon" onClick={() => setReviewModal(false)}>
             {t("pages.product.reviews.core.actions.cancel")}
           </button>
-          <button className="primary">
+          <button className="primary" onClick={save}>
             {t("pages.product.reviews.core.actions.save")}
           </button>
         </div>
@@ -75,6 +93,8 @@ export default function Reviews() {
           <ReviewCore />
         </ModalFull>
       </div>
+
+      <Toast variant="error" show={hasError} close={setError} />
     </div>
   );
 }

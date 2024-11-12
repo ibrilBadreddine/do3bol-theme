@@ -7,6 +7,7 @@ import SliderV2 from "@/assets/images/slider-v2.jpg";
 import SliderV3 from "@/assets/images/slider-v3.jpg";
 import { useTranslation } from "react-i18next";
 import { useCustom } from "@/core/context";
+import { Link } from "react-router-dom";
 
 const Slider: React.FC<SliderDefinition> = ({
   orientation,
@@ -40,6 +41,7 @@ const Slider: React.FC<SliderDefinition> = ({
     <div
       className="slider-container"
       data-orientation={IS_VERTICAL ? "vertical" : "horizontal"}
+      data-style={getSetting("slider", "style")?.value}
       style={{
         "--per-page": PER_PAGE,
         "--gap": 10,
@@ -66,10 +68,10 @@ const Slider: React.FC<SliderDefinition> = ({
                 {content && getSetting("slider", "show_content")?.value && (
                   <div className="item-content">
                     <p>{t("sections.slider.title")}</p>
-                    <button className="secondary">
+                    <Link to="/" className="link-btn secondary">
                       {t("sections.slider.action")}
                       <Icon name="arrow_right_up" />
-                    </button>
+                    </Link>
                   </div>
                 )}
               </div>

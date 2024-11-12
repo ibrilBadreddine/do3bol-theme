@@ -44,7 +44,7 @@ export default function Home() {
       {baseTheme.sections.map(
         (section) =>
           section.is_visible && (
-            <div id={section.id} key={section.id}>
+            <div className={`custom-section ${section.id}`} key={section.id}>
               {SECTIONS[section.id]}
             </div>
           )

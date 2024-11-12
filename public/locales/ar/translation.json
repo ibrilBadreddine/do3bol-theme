@@ -102,6 +102,7 @@
             "seconds": "ثواني"
           }
         },
+        "title": "سويت شيرت واسع بتفاصيل رقعة أنيقة",
         "description": {
           "chunk_1": {
             "title": "التكوين",
@@ -300,12 +301,20 @@
     "content": "مجموعة هيكلية مستوحاة من الأشكال الهندسية والأناقة الخالدة ✨ مصنوعة من الجلد الناعم 100%.",
     "products": {
       "list": {
-        "items": [
-          { "title": "قميص واسع بتطريزات", "price": 999, "img": "" },
-          { "title": "جاكيت فني بلون مزدوج", "price": 599, "img": "" },
-          { "title": "بنطال نجار مغسول", "price": 699, "img": "" },
-          { "title": "كنزة بنسيج خشن", "price": 499, "img": "" }
-        ],
+        "items": {
+          "leather-jacket": "سترة جلدية",
+          "straight-leg-jogger-waist-trousers": "بنطال بخصر مرن وساق مستقيمة",
+          "flowing-modal-blend-shirt": "قميص بخليط مودال انسيابي",
+          "embossed-leather-overshirt": "قميص جلدي منقوش",
+          "rectangular-sunglasses": "نظارات شمسية مستطيلة",
+          "woollen-bandana": "منديل صوفي",
+          "basic-plain-knit-sweatshirt": "سويت شيرت محبوك بسيط",
+          "ripped-mid-rise-wide-leg-trf-jeans": "جينز بخصر متوسط وقصة ساق واسعة ممزق",
+          "waistcoat-with-bow": "صدرية مع ربطة",
+          "3-pack-of-cherry-and-check-socks": "3 جوارب بنقشة الكرز والمربعات",
+          "hoodie-with-zip": "هودي بسحاب",
+          "leather-trainers": "حذاء رياضي جلدي"
+        },
         "action": "اشتري الآن"
       },
       "single": {},

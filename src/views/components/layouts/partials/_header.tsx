@@ -15,9 +15,9 @@ export default function Header() {
     <header className="header-container">
       <div className="links-box">
         <Link to="/">{t("layouts.header.links.home")}</Link>
-        <Link to="/collections">{t("layouts.header.links.man")}</Link>
-        <Link to="/collections">{t("layouts.header.links.woman")}</Link>
-        <Link to="/collections">{t("layouts.header.links.kids")}</Link>
+        <Link to="/collections/man">{t("layouts.header.links.man")}</Link>
+        <Link to="/collections/woman">{t("layouts.header.links.woman")}</Link>
+        <Link to="/collections/kids">{t("layouts.header.links.kids")}</Link>
       </div>
       <div className="header-mobile" data-hidden={!menu}>
         <button
@@ -41,14 +41,14 @@ export default function Header() {
                   {t("layouts.header.links.home")}
                   <Icon name="arrow_right_up" />
                 </Link>
-                <Link to="/collections">
+                <Link to="/collections/man">
                   {t("layouts.header.links.man")} <Icon name="arrow_right_up" />
                 </Link>
-                <Link to="/collections">
+                <Link to="/collections/woman">
                   {t("layouts.header.links.woman")}
                   <Icon name="arrow_right_up" />
                 </Link>
-                <Link to="/collections">
+                <Link to="/collections/kids">
                   {t("layouts.header.links.kids")}
                   <Icon name="arrow_right_up" />
                 </Link>

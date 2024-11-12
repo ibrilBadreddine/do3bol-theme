@@ -24,12 +24,12 @@ const VARIANTS_SCHEMA: VariantsDefinition[] = [
   {
     id: "radio",
     description: "Single-choice selection buttons",
-    is_visible: true,
+    is_visible: false,
   },
   {
     id: "dropdown",
     description: "Expandable list for selecting options",
-    is_visible: true,
+    is_visible: false,
   },
 ];
 

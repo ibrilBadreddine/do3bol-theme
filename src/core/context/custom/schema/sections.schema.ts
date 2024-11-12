@@ -10,7 +10,7 @@ const SECTIONS_SCHEMA: SectionDefinition[] = [
         id: "show_content",
         label: "Show content:",
         type: "switch",
-        value: false,
+        value: true,
       },
       {
         id: "style",

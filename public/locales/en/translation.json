@@ -102,6 +102,7 @@
             "seconds": "Seconds"
           }
         },
+        "title": "Boxy fit patch sweatshirt",
         "description": {
           "chunk_1": {
             "title": "COMPOSITION",
@@ -299,48 +300,20 @@
     "content": "A structural collection based on geometric shapes and timeless styles ✨ finished in smooth textures 100% leather.",
     "products": {
       "list": {
-        "items": [
-          {
-            "title": "Boxy fit patch sweatshirt",
-            "price": 999,
-            "img": ""
-          },
-          {
-            "title": "Colour block technical jacket",
-            "price": 599,
-            "img": ""
-          },
-          {
-            "title": "Washed carpenter trousers",
-            "price": 699,
-            "img": ""
-          },
-          {
-            "title": "Textured sweater",
-            "price": 499,
-            "img": ""
-          },
-          {
-            "title": "",
-            "price": "",
-            "img": ""
-          },
-          {
-            "title": "",
-            "price": "",
-            "img": ""
-          },
-          {
-            "title": "",
-            "price": "",
-            "img": ""
-          },
-          {
-            "title": "",
-            "price": "",
-            "img": ""
-          }
-        ],
+        "items": {
+          "leather-jacket": "Leather Jacket",
+          "straight-leg-jogger-waist-trousers": "Straight Leg Jogger Waist Trousers",
+          "flowing-modal-blend-shirt": "Flowing Modal Blend Shirt",
+          "embossed-leather-overshirt": "Embossed Leather Overshirt",
+          "rectangular-sunglasses": "Rectangular Sunglasses",
+          "woollen-bandana": "Woollen Bandana",
+          "basic-plain-knit-sweatshirt": "Basic Plain Knit Sweatshirt",
+          "ripped-mid-rise-wide-leg-trf-jeans": "Ripped Mid Rise Wide Leg Trf Jeans",
+          "waistcoat-with-bow": "Waistcoat With Bow",
+          "3-pack-of-cherry-and-check-socks": "3 Pack Of Cherry And Check Socks",
+          "hoodie-with-zip": "Hoodie With Zip",
+          "leather-trainers": "Leather Trainers"
+        },
         "action": "Buy now"
       },
       "single": {},

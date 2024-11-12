@@ -16,7 +16,7 @@ export default function app() {
           element: <Home />,
         },
         {
-          path: "/collections",
+          path: "/collections/:collection_id?",
           element: <Search />,
         },
         {

@@ -1,17 +1,22 @@
 import "./toast.style.scss";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import Icon from "@components/shared/icons";
 import type { ToastDefinition } from "./toast.type";
 import { useTranslation } from "react-i18next";
 
-const Toast: React.FC<ToastDefinition> = ({ variant, title, message }) => {
+const Toast: React.FC<ToastDefinition> = ({
+  variant,
+  show,
+  close,
+  title,
+  message,
+}) => {
   const { t } = useTranslation();
-  const [isToastActive, setToast] = useState<boolean>(true);
-
+  
   useEffect(() => {
-    const timer = setTimeout(() => setToast(false), 5000);
+    const timer = setTimeout(() => close(false), 5000);
     return () => clearTimeout(timer);
-  }, [isToastActive]);
+  }, [show]);
 
   const variants = {
     default: {
@@ -47,12 +52,7 @@ const Toast: React.FC<ToastDefinition> = ({ variant, title, message }) => {
   };
   return (
     <div className="toast-container">
-      <button
-        className={isToastActive ? "loading" : "primary"}
-        onClick={() => setToast(true)}>
-        Preview
-      </button>
-      <div className={`toast ${variant}`} data-is-active={isToastActive}>
+      <div className={`toast ${variant}`} data-is-active={show}>
         {variants[variant].icon && (
           <Icon name={variants[variant].icon} size={25} />
         )}
@@ -61,7 +61,7 @@ const Toast: React.FC<ToastDefinition> = ({ variant, title, message }) => {
             <h4>{title ?? variants[variant].title}</h4>
             <p>{message ?? variants[variant].message}</p>
           </div>
-          <button onClick={() => setToast(false)} className="toast-action">
+          <button onClick={() => close(false)} className="toast-action">
             <Icon name="close" />
           </button>
         </div>

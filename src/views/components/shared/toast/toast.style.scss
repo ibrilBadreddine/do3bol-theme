@@ -7,7 +7,6 @@
     border-radius: var(--radius-md);
     box-shadow: var(--shadow-dark-sm);
     background-color: var(--base-white);
-    border-left: 5px solid;
     width: fit-content;
     position: fixed;
     user-select: none;
@@ -20,6 +19,12 @@
     left: 50%;
     transition: all 0.3s;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    &:dir(ltr) {
+      border-left: 5px solid;
+    }
+    &:dir(rtl) {
+      border-right: 5px solid;
+    }
     &:is(.success) {
       border-color: var(--success-500);
       > svg:first-of-type {
@@ -62,6 +67,7 @@
       align-items: center;
       justify-content: space-between;
       gap: 3em;
+      width: 400px;
       .toast-info {
         h4 {
           font-size: 14px;

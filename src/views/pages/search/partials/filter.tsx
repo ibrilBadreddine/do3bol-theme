@@ -3,7 +3,10 @@ import Icon from "@/views/components/shared/icons";
 import ModalSticky from "@/views/components/shared/modal/sticky";
 import { useTranslation } from "react-i18next";
 
-export default function Filter() {
+const Filter: React.FC<{
+  products_length: number;
+  setSort: (field: "price" | "newest" | "a-z", order: "asc" | "desc") => void;
+}> = ({ products_length, setSort }) => {
   const { t } = useTranslation();
   const [filterMobile, setFilterMobile] = useState(false);
 
@@ -116,4 +119,6 @@ export default function Filter() {
       </ModalSticky>
     </>
   );
-}
+};
+
+export default Filter;

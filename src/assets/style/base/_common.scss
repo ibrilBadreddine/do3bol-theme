@@ -1,5 +1,5 @@
 // BUTTON
-button {
+button, .link-btn {
   padding: 12px 25px;
   display: flex;
   align-items: center;
@@ -31,7 +31,7 @@ button {
     background-color: var(--gray-50);
     color: var(--base-black);
     &:hover {
-      background-color: rgb(240, 240, 240);
+      background-color: gainsboro;
     }
   }
   &.outline {

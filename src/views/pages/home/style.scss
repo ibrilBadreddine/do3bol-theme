@@ -1,11 +1,26 @@
 .home-page {
-  margin: 2em 10% 5em 10%;
   display: grid;
   gap: 8em;
+  margin-bottom: 5em;
+  .custom-section {
+    margin: 0 10%;
+    &:first-child:not(.slider) {
+      margin-top: 5em;
+    }
+    &:is(.slider) {
+      margin: 0;
+    }
+  }
 }
 
 @media (max-width: 766px) {
   .home-page {
-    margin: 3em 1.5em;
+    margin-bottom: 3em;
+    .custom-section {
+      margin: 0 1.5em;
+      &:first-child:not(.slider) {
+        margin-top: 3em;
+      }
+    }
   }
 }

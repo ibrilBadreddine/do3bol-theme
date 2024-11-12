@@ -4,8 +4,8 @@ const PRODUCTS: ProductDefinition[] = [
   {
     id: "leather-jacket",
     price: {
-      before: 4.499,
-      after: 3.399,
+      before: 499,
+      after: 399,
     },
     img: "https://static.zara.net/assets/public/0dc2/096d/a65442ac8e65/1b701456e047/04416303700-e1/04416303700-e1.jpg?ts=1730641874520&w=530",
     collection_id: "man",

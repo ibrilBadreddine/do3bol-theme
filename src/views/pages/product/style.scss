@@ -118,13 +118,16 @@
           font-size: 14px;
           border: 1px solid var(--gray-50);
           .visitors {
-            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5em;
             padding: 1.5em;
             border-bottom: 1px solid var(--gray-50);
             span {
-              padding: 3px 10px;
+              padding: 3px 8px;
               border-radius: var(--radius-sm);
-              background-color: var(--gray-50);
+              background-color: gainsboro;
             }
           }
           .time {
@@ -153,6 +156,11 @@
             display: flex;
             align-items: center;
             gap: 1em;
+            .quantity-value {
+              display: flex;
+              justify-content: center;
+              min-width: 15px;
+            }
           }
           .add-btn {
             width: 100%;

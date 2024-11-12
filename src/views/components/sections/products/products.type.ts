@@ -1,13 +1,12 @@
+import type { ProductDefinition } from "@/core/types";
+
 export interface ListDefinition {
   title?: string;
   subtitle?: string;
   columns?: number;
   gap?: number;
-  length?: number;
-  style?: ProductStyles;
+  products?: ProductDefinition[];
 }
-
-type ProductStyles = "default" | "with-button";
 
 export interface ReviewDefinition {
   title?: string;
