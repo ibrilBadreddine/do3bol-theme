@@ -361,6 +361,10 @@
             "kids": "Kids"
           }
         },
+        "empty": {
+          "title": "No settings found!",
+          "subtitle": "No settings to change here, but visibility control remains available."
+        },
         "actions": {
           "back": "Back",
           "next": "Next",

@@ -43,25 +43,24 @@ export default function CustomEditor() {
       </div>
       {/* Settings */}
       <div className="editor-form">
-        {currentItem?.settings &&
-          currentItem?.settings.map((setting) => {
+        {currentItem?.settings?.length ? (
+          currentItem.settings.map((setting) => {
             switch (setting.type) {
               case "switch":
                 return <SwitchField {...setting} key={setting.id} />;
               case "select":
                 return <SelectField {...setting} key={setting.id} />;
-              default:
-                return (
-                  <div className="empty-editor">
-                    <Empty
-                      icon="puzzle"
-                      title="Oops!"
-                      subtitle="No settings here."
-                    />
-                  </div>
-                );
             }
-          })}
+          })
+        ) : (
+          <div className="empty-editor">
+            <Empty
+              icon="puzzle"
+              title={t("components.config.custom.empty.title")}
+              subtitle={t("components.config.custom.empty.subtitle")}
+            />
+          </div>
+        )}
       </div>
     </div>
   );

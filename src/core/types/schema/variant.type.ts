@@ -2,6 +2,7 @@ export interface VariantsDefinition {
   id: AvailableVariants;
   description: string;
   is_visible: boolean;
+  settings?: []
 }
 
 export type AvailableVariants =

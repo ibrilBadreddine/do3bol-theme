@@ -15,13 +15,13 @@ const Welcome: React.FC<{ setStep: (step: number) => void }> = ({
         <p>{t("components.config.welcome.subtitle")}</p>
       </div>
       <div className="welcome-options">
-        <button onClick={() => setStep(2)} className="icon xl">
-          <img src={Step1} alt="step 1" />
-          <span>{t("components.config.welcome.options.explore")}</span>
-        </button>
         <button onClick={() => setStep(4)} className="icon xl">
           <img src={Step2} alt="step 2" />
           <span>{t("components.config.welcome.options.customize")}</span>
+        </button>
+        <button onClick={() => setStep(2)} className="icon xl">
+          <img src={Step1} alt="step 1" />
+          <span>{t("components.config.welcome.options.explore")}</span>
         </button>
       </div>
     </div>
