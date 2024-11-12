@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import StoreLogo from "@/assets/images/logo.png";
 import Icon from "@components/shared/icons";
 import Cart from "@/views/components/shared/cart";
@@ -7,10 +7,15 @@ import { useTranslation } from "react-i18next";
 
 export default function Header() {
   const { t } = useTranslation();
+  const location = useLocation();
   const [search, setSearch] = useState<boolean>(false);
   const [menu, setMenu] = useState<boolean>(false);
   const [cart, setCart] = useState<boolean>(false);
 
+  useEffect(() => {
+    setMenu(false);
+    setCart(false);
+  }, [location]);
   return (
     <header className="header-container">
       <div className="links-box">
@@ -35,7 +40,12 @@ export default function Header() {
               </button>
             </div>
             <div className="menu-core">
-              <input type="search" placeholder={t("layouts.header.search")} />
+              <div className="search-input">
+                <input type="text" placeholder={t("layouts.header.search")} />
+                <button className="icon">
+                  <Icon name="search" />
+                </button>
+              </div>
               <div className="links">
                 <Link to="/">
                   {t("layouts.header.links.home")}
@@ -75,7 +85,7 @@ export default function Header() {
           <Icon name={!search ? "search" : "close"} />
         </button>
         <button onClick={() => setCart(true)} className="icon cart-btn">
-          <span className="total-items">4</span>
+          <span className="total-items">3</span>
           <Icon name="cart" />
           <span className="total-amount">0 {t("common.currency")}</span>
         </button>

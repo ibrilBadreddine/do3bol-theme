@@ -1,13 +1,21 @@
 import "./dialog.style.scss";
+import { useState } from "react";
 import Icon from "@components/shared/icons";
 import ModalFull from "@components/shared/modal/full";
 import ModalSticky from "@components/shared/modal/sticky";
 import type { DialogDefinition } from "./dialog.type";
 import { useTranslation } from "react-i18next";
+import Toast from "../toast";
 
 export const Dialog = ({ isOpen, setModal }: DialogDefinition) => {
   const { t } = useTranslation();
+  const [isSuccess, setStatus] = useState<boolean>(false);
 
+  // TODO: Just for testing...
+  const remove = () => {
+    setModal(false);
+    setStatus(true);
+  };
   const DialogCore = () => {
     return (
       <div className="dialog-core">
@@ -22,7 +30,7 @@ export const Dialog = ({ isOpen, setModal }: DialogDefinition) => {
           <button className="icon" onClick={() => setModal(false)}>
             {t("components.dialog.actions.cancel")}
           </button>
-          <button className="destructive">
+          <button className="destructive" onClick={remove}>
             {t("components.dialog.actions.delete")}
           </button>
         </div>
@@ -38,6 +46,8 @@ export const Dialog = ({ isOpen, setModal }: DialogDefinition) => {
       <ModalSticky isOpen={isOpen} setModal={setModal}>
         <DialogCore />
       </ModalSticky>
+
+      <Toast variant="success" show={isSuccess} close={setStatus} />
     </div>
   );
 };

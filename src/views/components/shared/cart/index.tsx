@@ -6,12 +6,14 @@ import Dialog from "@components/shared/dialog";
 import Product1 from "@/assets/images/product-1.jpg";
 import type { CartDefinition } from "./cart.type";
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
 
 const Cart = ({ isOpen, setModal }: CartDefinition) => {
   const { t } = useTranslation();
+  const navigate = useNavigate();
   const [cart, setCart] = useState<number>(3);
   const [isDelete, setDelete] = useState<boolean>(false);
-
+  
   return (
     <div className="cart-container" data-hidden={!isOpen}>
       <div className="cart-box">
@@ -74,7 +76,7 @@ const Cart = ({ isOpen, setModal }: CartDefinition) => {
               <h4 className="amount">999 {t("common.currency")}</h4>
             </div>
             <div className="actions">
-              <button className="primary">
+              <button className="primary" onClick={() => navigate("/product")}>
                 {t("components.cart.core.actions.shop_now")}
               </button>
               <button className="icon" onClick={() => setModal(false)}>
