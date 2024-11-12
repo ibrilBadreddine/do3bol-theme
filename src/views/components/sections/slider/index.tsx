@@ -68,7 +68,7 @@ const Slider: React.FC<SliderDefinition> = ({
                 {content && getSetting("slider", "show_content")?.value && (
                   <div className="item-content">
                     <p>{t("sections.slider.title")}</p>
-                    <Link to="/" className="link-btn secondary">
+                    <Link to="collections/" className="link-btn secondary">
                       {t("sections.slider.action")}
                       <Icon name="arrow_right_up" />
                     </Link>
