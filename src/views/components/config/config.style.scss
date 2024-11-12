@@ -50,3 +50,9 @@
     }
   }
 }
+
+@media (max-width: 900px) {
+  .config-container {
+    display: none;
+  }
+}
