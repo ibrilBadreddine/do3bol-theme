@@ -2,11 +2,11 @@
   .cart-box {
     position: fixed;
     z-index: 9999;
-    top: 0;
+    bottom: 0;
     right: 0;
     width: 500px;
     translate: 0%;
-    height: 100vh;
+    height: 100%;
     border-radius: var(--radius-lg) 0 0 var(--radius-lg);
     background-color: var(--base-white);
     display: flex;
