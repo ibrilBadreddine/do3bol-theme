@@ -139,9 +139,11 @@
 
 @media (max-width: 766px) {
   .slider-container {
+    &[data-style="fit"] .slider-area {
+      margin: 2em 1.5em 0 1.5em;
+    }
     .slider-area {
-      height: 60vh;
-      margin: 0 1.5em !important;
+      height: 70vh;
       .slider-box .slider-inner .slider-item {
         .item-content {
           button {
