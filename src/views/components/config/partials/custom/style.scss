@@ -59,7 +59,6 @@
           font-size: 14px;
           position: relative;
           .box-name {
-            text-transform: capitalize;
             color: var(--gray-500);
             font-size: 13px;
             padding: 0 5px;
@@ -214,7 +213,6 @@
           .headlines {
             h4 {
               font-size: 16px;
-              text-transform: capitalize;
             }
             p {
               color: var(--gray-500);
@@ -273,7 +271,6 @@
           display: flex;
           align-items: center;
           justify-content: space-between;
-          text-transform: capitalize;
           font-size: 13px;
           cursor: grab;
         }
@@ -347,7 +344,6 @@
                 position: absolute;
                 font-size: 10px;
                 padding: 5px 10px;
-                text-transform: capitalize;
                 color: var(--gray-500);
                 background-color: var(--gray-50);
                 border-start-start-radius: var(--radius-sm);

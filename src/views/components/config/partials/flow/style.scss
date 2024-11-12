@@ -92,7 +92,6 @@
       justify-items: center;
       height: 100%;
       text-transform: uppercase;
-
     }
     .timeline-core {
       display: grid;
@@ -192,6 +191,9 @@
     button {
       width: 25%;
       justify-content: center;
+      &:dir(rtl) svg {
+        rotate: 180deg;
+      }
     }
   }
 }

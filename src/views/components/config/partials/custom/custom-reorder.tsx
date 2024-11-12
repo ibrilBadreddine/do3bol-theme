@@ -1,17 +1,14 @@
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import { useCustom } from "@/core/context";
 import Icon from "@components/shared/icons";
+import { useTranslation } from "react-i18next";
 
 export default function CustomReorder() {
+  const { t } = useTranslation();
   const { theme, setOrder } = useCustom();
   const itemType = window.location.pathname.includes("product")
     ? "variant"
     : "section";
-
-  const formatNaming = (item_id: string) =>
-    item_id
-      .replace("product-", item_id === "product-list" ? "Products" : " ")
-      .replace("list", "");
 
   const dragFrom = useRef<number>(0);
   const dragTo = useRef<number>(0);
@@ -27,7 +24,7 @@ export default function CustomReorder() {
             onDragEnter={() => (dragTo.current = i)}
             onDragEnd={() => setOrder(itemType, item.id, dragTo.current)}
             onDragOver={(e) => e.preventDefault()}>
-            {formatNaming(item.id)}
+            {t(`components.config.custom.${itemType}s.${item.id}.title`)}
             <Icon name="bars" />
           </button>
         ))}
@@ -46,7 +43,9 @@ export default function CustomReorder() {
           <div className="shape-items">
             {theme[`${itemType}s`].map((item, i) => (
               <div className="preview-shape" key={i}>
-                <span className="badge">{formatNaming(item.id)}</span>
+                <span className="badge">
+                  {t(`components.config.custom.${itemType}s.${item.id}.title`)}
+                </span>
               </div>
             ))}
           </div>

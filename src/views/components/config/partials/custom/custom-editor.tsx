@@ -3,8 +3,10 @@ import SwitchField from "./fields/switch-field";
 import SelectField from "./fields/select-field";
 import Empty from "@/views/components/shared/empty";
 import Icon from "@/views/components/shared/icons";
+import { useTranslation } from "react-i18next";
 
 export default function CustomEditor() {
+  const { t } = useTranslation();
   const { theme, setVisibility } = useCustom();
   const itemType = window.location.pathname.includes("product")
     ? "variant"
@@ -16,18 +18,21 @@ export default function CustomEditor() {
 
   const handleVisibility = () =>
     setVisibility(itemType, theme.selected_item, !currentItem?.is_visible);
-
-  const formatNaming = (item_id: string) =>
-    item_id
-      .replace("product-", item_id === "product-list" ? "Products" : " ")
-      .replace("list", "");
   return (
     <div className="editor">
       {/* Head */}
       <div className="editor-head">
         <div className="headlines">
-          <h4>{formatNaming(theme.selected_item)}</h4>
-          <p>{currentItem?.description}</p>
+          <h4>
+            {t(
+              `components.config.custom.${itemType}s.${theme.selected_item}.title`
+            )}
+          </h4>
+          <p>
+            {t(
+              `components.config.custom.${itemType}s.${theme.selected_item}.subtitle`
+            )}
+          </p>
         </div>
         <button onClick={handleVisibility} className="visibility-btn icon">
           <Icon

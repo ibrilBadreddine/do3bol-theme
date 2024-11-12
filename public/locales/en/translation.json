@@ -1,6 +1,8 @@
 {
   "common": {
-    "currency": "MAD"
+    "currency": "MAD",
+    "ar": "Arabic",
+    "en": "English"
   },
   "layouts": {
     "header": {
@@ -251,6 +253,120 @@
     "upload": {
       "title": "Drag your photo here, or choose file",
       "subtitle": "Maximum file size 2mb"
+    },
+    "config": {
+      "welcome": {
+        "title": "Hey 👋, Want to See It or Make It Yours?",
+        "subtitle": "Pick your path and let’s get started!",
+        "options": {
+          "customize": "Customize",
+          "explore": "Explore"
+        }
+      },
+      "flow": {
+        "head": {
+          "title": "Choose flow",
+          "subtitle": "Select a flow to start you exploring journey"
+        },
+        "options": {
+          "skip_cart": {
+            "title": "Skip cart",
+            "subtitle": "Go straight to checkout for a quicker purchase."
+          },
+          "with_cart": {
+            "title": "With cart",
+            "subtitle": "Shop with a full cart experience before checkout."
+          }
+        },
+        "none": "3gezt... 😔",
+        "actions": {
+          "back": "Back",
+          "next": "Next"
+        }
+      },
+      "custom": {
+        "head": {
+          "title": "Customize Theme",
+          "subtitle": "Make this theme uniquely yours"
+        },
+        "sections": {
+          "slider": {
+            "title": "Slider",
+            "subtitle": "Carousel to display key visuals"
+          },
+          "box": {
+            "title": "Box",
+            "subtitle": "Highlight important info or links"
+          },
+          "content": {
+            "title": "HTML content",
+            "subtitle": "Rich text area for stories or updates"
+          },
+          "collections": {
+            "title": "Collections",
+            "subtitle": "Curated product group display"
+          },
+          "product-list": {
+            "title": "Products",
+            "subtitle": "Showcase a list of featured products"
+          },
+          "product-reviews": {
+            "title": "Reviews",
+            "subtitle": "Customer feedback highlights"
+          }
+        },
+        "variants": {
+          "color": {
+            "title": "Color",
+            "subtitle": "Options for selecting product colors"
+          },
+          "badge": {
+            "title": "Badge",
+            "subtitle": "Selectable badges for product options"
+          },
+          "countdown": {
+            "title": "Countdown",
+            "subtitle": "Timer to create urgency for limited offers"
+          },
+          "form": {
+            "title": "Express checkout",
+            "subtitle": "Quick buy form for faster checkout"
+          },
+          "radio": {
+            "title": "Radio",
+            "subtitle": "Single-choice selection buttons"
+          },
+          "dropdown": {
+            "title": "Dropdown",
+            "subtitle": "Expandable list for selecting options"
+          }
+        },
+        "general": {
+          "language": "Language:",
+          "color": "Color:",
+          "radius": "Radius:"
+        },
+        "settings": {
+          "headlines": "Show headlines:",
+          "show_content": "Show content:",
+          "style": "Choose style:",
+          "collection_id": "Choose collection:",
+          "options": {
+            "fit": "Fit",
+            "full": "Full",
+            "default": "Default",
+            "with-button": "With button",
+            "man": "Man",
+            "woman": "Woman",
+            "kids": "Kids"
+          }
+        },
+        "actions": {
+          "back": "Back",
+          "next": "Next",
+          "save": "Save"
+        }
+      }
     }
   },
   "sections": {

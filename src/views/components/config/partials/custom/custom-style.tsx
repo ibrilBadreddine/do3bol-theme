@@ -3,22 +3,22 @@ import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 export default function CustomStyle() {
-  const { i18n } = useTranslation();
+  const { t, i18n } = useTranslation();
   const { setLanguage, setColor, setRadius } = useCustom();
 
   const [styles, setStyles] = useState([
     {
       id: "lang",
-      label: "Language:",
+      label: t("components.config.custom.general.language"),
       value: i18n.language,
       options: [
-        { label: "English", value: "en" },
-        { label: "Arabic", value: "ar" },
+        { label: t("common.en"), value: "en" },
+        { label: t("common.ar"), value: "ar" },
       ],
     },
     {
       id: "color",
-      label: "Color:",
+      label: t("components.config.custom.general.color"),
       value: "#121212",
       options: [
         { label: "Black", value: "#121212" },
@@ -30,7 +30,7 @@ export default function CustomStyle() {
     },
     {
       id: "radius",
-      label: "Radius:",
+      label: t("components.config.custom.general.radius"),
       value: "md",
       options: [
         { label: "Sm", value: "sm" },
@@ -48,8 +48,8 @@ export default function CustomStyle() {
 
   useEffect(() => {
     setLanguage(styles[0].value);
-    setColor(styles[1].value)
-    setRadius(styles[2].value)
+    setColor(styles[1].value);
+    setRadius(styles[2].value);
   }, [styles]);
 
   return (

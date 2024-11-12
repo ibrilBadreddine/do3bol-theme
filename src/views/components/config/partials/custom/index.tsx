@@ -6,8 +6,10 @@ import CustomOptions from "./custom-options";
 import CustomReorder from "./custom-reorder";
 import CustomStyle from "./custom-style";
 import { useCustom } from "@/core/context";
+import { useTranslation } from "react-i18next";
 
 const Custom: React.FC<{ setStep: (step: number) => void }> = ({ setStep }) => {
+  const { t } = useTranslation();
   const { isChanged, save } = useCustom();
   const [customize, setCustomize] = useState<"settings" | "reorder" | "style">(
     "settings"
@@ -22,8 +24,8 @@ const Custom: React.FC<{ setStep: (step: number) => void }> = ({ setStep }) => {
       {/* Head */}
       <div className="custom-head">
         <div className="headlines">
-          <h4>Customize Theme</h4>
-          <p>Make this theme uniquely yours</p>
+          <h4>{t("components.config.custom.head.title")}</h4>
+          <p>{t("components.config.custom.head.subtitle")}</p>
         </div>
         <div className="tabs">
           <button
@@ -62,11 +64,11 @@ const Custom: React.FC<{ setStep: (step: number) => void }> = ({ setStep }) => {
       {/* Footer */}
       <div className="custom-footer">
         <button onClick={() => setStep(1)} className="icon">
-          Back
+          {t("components.config.custom.actions.back")}
         </button>
         <button onClick={saveChanges} className="primary" disabled={!isChanged}>
           <Icon name="save" />
-          Save
+          {t("components.config.custom.actions.save")}
         </button>
       </div>
     </div>

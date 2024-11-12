@@ -1,7 +1,9 @@
 import { useState } from "react";
 import Icon from "@components/shared/icons";
+import { useTranslation } from "react-i18next";
 
 export default function FlowTimeline() {
+  const { t } = useTranslation();
   const TASKS = [
     {
       title: "Home > Explore Collections",
@@ -37,7 +39,7 @@ export default function FlowTimeline() {
         ))}
       </div>
       <div className="i-m-done">
-        <h1>3gezt... 😔</h1>
+        <h1>{t("components.config.flow.none")}</h1>
       </div>
       {/* <div className="timeline-core">
         <div className="tasks">

@@ -1,7 +1,9 @@
 import { useState } from "react";
 import Icon from "@components/shared/icons";
+import { useTranslation } from "react-i18next";
 
 export default function FlowOptions() {
+  const { t } = useTranslation();
   const [selectedFlow, setFlow] = useState<1 | 2>(1);
 
   return (
@@ -9,8 +11,8 @@ export default function FlowOptions() {
       {/* Head */}
       <div className="options-head">
         <div className="headlines">
-          <h4>Choose flow</h4>
-          <p>Select a flow to start you exploring journey</p>
+          <h4>{t("components.config.flow.head.title")}</h4>
+          <p>{t("components.config.flow.head.subtitle")}</p>
         </div>
       </div>
       {/* Core */}
@@ -22,8 +24,8 @@ export default function FlowOptions() {
             data-active-flow={selectedFlow === 1}>
             <Icon name="bolt" size={20} />
             <div className="opt-info">
-              <span>Skip cart</span>
-              <p>Go straight to checkout for a quicker purchase.</p>
+              <span>{t("components.config.flow.options.skip_cart.title")}</span>
+              <p>{t("components.config.flow.options.skip_cart.subtitle")}</p>
             </div>
           </button>
           <button
@@ -32,8 +34,8 @@ export default function FlowOptions() {
             data-active-flow={selectedFlow === 2}>
             <Icon name="cart" size={20} />
             <div className="opt-info">
-              <span>With cart</span>
-              <p>Shop with a full cart experience before checkout.</p>
+              <span>{t("components.config.flow.options.with_cart.title")}</span>
+              <p>{t("components.config.flow.options.with_cart.subtitle")}</p>
             </div>
           </button>
         </div>
