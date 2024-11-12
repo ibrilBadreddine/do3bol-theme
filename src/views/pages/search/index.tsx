@@ -19,7 +19,7 @@ export default function Search() {
 
   const handleFilter = () => {
     const result = PRODUCTS.filter(
-      (prod) => (!collection_id || prod.collection_id === collection_id)
+      (prod) => !collection_id || prod.collection_id === collection_id
     );
     switch (sort.field) {
       case "a-z":
@@ -47,21 +47,35 @@ export default function Search() {
   );
 
   useEffect(() => {
-    console.log(sort)
+    console.log(sort);
     setProducts(handleFilter());
   }, [collection_id, sort]);
 
   return (
     <div className="search-page">
+      {/* Navigation */}
       <div className="navigation-area">
         <Link to="/">{t("pages.collections.navigation.home")}</Link>
         <Icon name="chevron_right" size={12} />
         <Link to="/collections">
           {t("pages.collections.navigation.browse")}
         </Link>
+        {collection_id && (
+          <>
+            <Icon name="chevron_right" size={12} />
+            <Link to={`/collections/${collection_id}`}>
+              {t(`layouts.header.links.${collection_id}`)}
+            </Link>
+          </>
+        )}
       </div>
+      {/* Browsing */}
       <div className="browsing-area">
-        <Filter products_length={filteredProducts.length} sort={sort} setSort={setSort} />
+        <Filter
+          products_length={filteredProducts.length}
+          sort={sort}
+          setSort={setSort}
+        />
         <Result products={filteredProducts} />
       </div>
     </div>

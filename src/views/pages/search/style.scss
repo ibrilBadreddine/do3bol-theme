@@ -9,13 +9,15 @@
     gap: 5px;
     align-items: center;
     margin-bottom: 2em;
+    margin-inline-start: 1em;
     a {
+      opacity: 0.5;
       border-radius: var(--radius-sm);
       &:hover {
         text-decoration: underline;
       }
-      &:first-child {
-        opacity: 0.5;
+      &:last-child {
+        opacity: 1;
       }
     }
     &:dir(rtl) svg {
@@ -103,7 +105,8 @@
           display: flex;
           gap: 0.5em;
           flex-wrap: wrap;
-          button, a {
+          button,
+          a {
             font-size: 13px;
             padding: 7px 12px;
             &:is(.active-sort) {
