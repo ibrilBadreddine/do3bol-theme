@@ -34,7 +34,7 @@ const Cart = ({ isOpen, setModal }: CartDefinition) => {
                   <Icon name="cart" />
                   {t("components.cart.core.note")}
                 </div>
-                {[...Array(3)].map((_, i) => (
+                {[...Array(cart)].map((_, i) => (
                   <div key={i} className="cart-item">
                     <div className="cart-detail">
                       <img src={Product1} alt="" className="item-img" />
