@@ -139,12 +139,18 @@
 
 @media (max-width: 766px) {
   .slider-container {
-    .slider-area .slider-box .slider-inner .slider-item .item-content {
-      button {
-        font-size: 13px;
-        svg {
-          width: 15px;
-          height: 15px;
+    .slider-area {
+      height: 60vh;
+      margin: 0 1.5em !important;
+      .slider-box .slider-inner .slider-item {
+        .item-content {
+          button {
+            font-size: 13px;
+            svg {
+              width: 15px;
+              height: 15px;
+            }
+          }
         }
       }
     }
