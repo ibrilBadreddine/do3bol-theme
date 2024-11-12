@@ -19,7 +19,7 @@ export default function Collections() {
         </div>
       )}
       <div className="collections-cards">
-        <Link to="/collections" className="col-card">
+        <Link to="/collections/man" className="col-card">
           <img
             src={Collection1}
             alt={t("sections.collections.items.man.tag")}
@@ -27,7 +27,7 @@ export default function Collections() {
           />
           <p className="col-name">{t("sections.collections.items.man.name")}</p>
         </Link>
-        <Link to="/collections" className="col-card">
+        <Link to="/collections/woman" className="col-card">
           <img
             src={Collection2}
             alt={t("sections.collections.items.woman.tag")}
@@ -37,7 +37,7 @@ export default function Collections() {
             {t("sections.collections.items.woman.name")}
           </p>
         </Link>
-        <Link to="/collections" className="col-card">
+        <Link to="/collections/kids" className="col-card">
           <img
             src={Collection3}
             alt={t("sections.collections.items.kids.tag")}
