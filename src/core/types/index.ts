@@ -1,8 +1,8 @@
 import type {
   AvailableSections,
   SectionDefinition,
-  Setting,
 } from "./schema/section.type";
+import { StyleDefinition } from "./schema/style.type";
 import type {
   AvailableVariants,
   VariantsDefinition,
@@ -23,9 +23,11 @@ export interface ProductDefinition {
 
 // CONTEXT
 export interface ThemeDefinition {
+  type: "sections" | "variants";
+  styles: StyleDefinition[];
   sections: SectionDefinition[];
   variants: VariantsDefinition[];
-  selected_item: AvailableSections | AvailableVariants;
+  selected_item: SectionDefinition | VariantsDefinition;
 }
 
 export interface CustomContextType {
@@ -33,27 +35,16 @@ export interface CustomContextType {
   baseTheme: ThemeDefinition;
   isChanged: boolean;
   save: () => void;
-  getSetting: (
+  setSelectedItem: (item_id: AvailableSections | AvailableVariants) => void;
+  setSetting: (setting_id: string, setting_value: boolean | string) => void;
+  setStyle: (style_id: string, style_value: string) => void;
+  setVisibility: (is_visible: boolean) => void;
+  setOrder: (
     item_id: AvailableSections | AvailableVariants,
-    setting_id: string
-  ) => Setting | undefined;
-  setLanguage: (lang: "en" | "ar") => void;
-  setColor: (color: string) => void;
-  setRadius: (radius: "sm" | "md" | "lg") => void;
-  setItem: (item_id: AvailableSections | AvailableVariants) => void;
-  setSetting: (
-    section: SectionDefinition,
-    setting_id: string,
-    setting_value: boolean | string
-  ) => void;
-  setOrder: <T extends "section" | "variant">(
-    type: T,
-    item_id: T extends "section" ? AvailableSections : AvailableVariants,
     new_index: number
   ) => void;
-  setVisibility: <T extends "section" | "variant">(
-    type: T,
-    item_id: T extends "section" ? AvailableSections : AvailableVariants,
-    is_visible: boolean
-  ) => void;
+  getSettingValue: (
+    item_id: AvailableSections | AvailableVariants,
+    setting_id: string
+  ) => string | boolean | undefined;
 }

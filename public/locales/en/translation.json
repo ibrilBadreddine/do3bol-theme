@@ -343,7 +343,7 @@
         },
         "general": {
           "language": "Language:",
-          "color": "Color:",
+          "colors": "Color:",
           "radius": "Radius:"
         },
         "settings": {

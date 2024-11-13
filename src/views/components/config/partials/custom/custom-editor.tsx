@@ -8,16 +8,8 @@ import { useTranslation } from "react-i18next";
 export default function CustomEditor() {
   const { t } = useTranslation();
   const { theme, setVisibility } = useCustom();
-  const itemType = window.location.pathname.includes("product")
-    ? "variant"
-    : "section";
+  const selectedItem = theme.selected_item;
 
-  const currentItem = theme[`${itemType}s`].find(
-    (item) => item.id === theme.selected_item
-  );
-
-  const handleVisibility = () =>
-    setVisibility(itemType, theme.selected_item, !currentItem?.is_visible);
   return (
     <div className="editor">
       {/* Head */}
@@ -25,26 +17,28 @@ export default function CustomEditor() {
         <div className="headlines">
           <h4>
             {t(
-              `components.config.custom.${itemType}s.${theme.selected_item}.title`
+              `components.config.custom.${theme.type}.${selectedItem.id}.title`
             )}
           </h4>
           <p>
             {t(
-              `components.config.custom.${itemType}s.${theme.selected_item}.subtitle`
+              `components.config.custom.${theme.type}.${selectedItem.id}.subtitle`
             )}
           </p>
         </div>
-        <button onClick={handleVisibility} className="visibility-btn icon">
+        <button
+          onClick={() => setVisibility(!theme.selected_item?.is_visible)}
+          className="visibility-btn icon">
           <Icon
-            name={currentItem?.is_visible ? "eye" : "eye_slash"}
+            name={selectedItem.is_visible ? "eye" : "eye_slash"}
             size={15}
           />
         </button>
       </div>
       {/* Settings */}
       <div className="editor-form">
-        {currentItem?.settings?.length ? (
-          currentItem.settings.map((setting) => {
+        {selectedItem.settings?.length ? (
+          selectedItem.settings.map((setting) => {
             switch (setting.type) {
               case "switch":
                 return <SwitchField {...setting} key={setting.id} />;

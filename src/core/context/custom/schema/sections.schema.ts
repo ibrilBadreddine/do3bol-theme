@@ -23,6 +23,7 @@ const SECTIONS_SCHEMA: SectionDefinition[] = [
         value: "fit",
       },
     ],
+    type: "sections"
   },
   {
     id: "box",
@@ -36,12 +37,14 @@ const SECTIONS_SCHEMA: SectionDefinition[] = [
         value: true,
       },
     ],
+    type: "sections"
   },
   {
     id: "content",
     description: "Rich text area for stories or updates",
     is_visible: true,
     settings: [],
+    type: "sections"
   },
   {
     id: "collections",
@@ -55,6 +58,7 @@ const SECTIONS_SCHEMA: SectionDefinition[] = [
         value: true,
       },
     ],
+    type: "sections"
   },
   {
     id: "product-list",
@@ -89,6 +93,7 @@ const SECTIONS_SCHEMA: SectionDefinition[] = [
         value: "man",
       },
     ],
+    type: "sections"
   },
   {
     id: "product-reviews",
@@ -102,6 +107,7 @@ const SECTIONS_SCHEMA: SectionDefinition[] = [
         value: true,
       },
     ],
+    type: "sections"
   },
 ];
 

@@ -2,7 +2,8 @@ export interface VariantsDefinition {
   id: AvailableVariants;
   description: string;
   is_visible: boolean;
-  settings?: []
+  settings?: [],
+  type: "variants"
 }
 
 export type AvailableVariants =

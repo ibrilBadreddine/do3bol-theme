@@ -5,7 +5,7 @@ import { useTranslation } from "react-i18next";
 
 export default function Box() {
   const { t } = useTranslation();
-  const { getSetting } = useCustom();
+  const { getSettingValue } = useCustom();
 
   const BOXES = [
     {
@@ -32,7 +32,7 @@ export default function Box() {
 
   return (
     <div className="box-container">
-      {getSetting("box", "headlines")?.value && (
+      {getSettingValue("box", "headlines") && (
         <div className="section-headlines">
           <h1>{t("sections.box.title")}</h1>
           <p>{t("sections.box.subtitle")}</p>
