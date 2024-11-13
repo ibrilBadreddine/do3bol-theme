@@ -4,10 +4,7 @@ import { useTranslation } from "react-i18next";
 
 export default function CustomOptions() {
   const { t } = useTranslation();
-  const { theme, setItem } = useCustom();
-  const itemType = window.location.pathname.includes("product")
-    ? "variants"
-    : "sections";
+  const { theme, setSelectedItem } = useCustom();
 
   // TODO: TO remove...
   const itemStyle = {
@@ -26,19 +23,19 @@ export default function CustomOptions() {
   };
   return (
     <div className="options">
-      {theme[itemType].map((item) => (
+      {theme[theme.type].map((item) => (
         <div key={item.id} className="option-box">
           <button
             className={`box-shape icon ${item.id}`}
-            data-selected={item.id === theme.selected_item}
-            onClick={() => setItem(item.id)}>
+            data-selected={item.id === theme.selected_item.id}
+            onClick={() => setSelectedItem(item.id)}>
             {[...Array(itemStyle[item.id])].map((_, i) => (
               <div key={i} className="shape" />
             ))}
             <Icon className="box-check" name="check_circle_solid" size={25} />
           </button>
           <p className="box-name">
-            {t(`components.config.custom.${itemType}.${item.id}.title`)}
+            {t(`components.config.custom.${theme.type}.${item.id}.title`)}
           </p>
         </div>
       ))}

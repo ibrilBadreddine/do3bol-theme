@@ -47,7 +47,6 @@ export default function Search() {
   );
 
   useEffect(() => {
-    console.log(sort);
     setProducts(handleFilter());
   }, [collection_id, sort]);
 

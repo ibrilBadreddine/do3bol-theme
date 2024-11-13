@@ -11,7 +11,7 @@ const ProductsReviews: React.FC<ReviewDefinition> = ({
   gap = 2,
 }) => {
   const { t } = useTranslation();
-  const { getSetting } = useCustom();
+  const { getSettingValue } = useCustom();
 
   const REVIEWS = [
     {
@@ -38,7 +38,7 @@ const ProductsReviews: React.FC<ReviewDefinition> = ({
 
   return (
     <div className="product-reviews-container">
-      {title && getSetting("product-reviews", "headlines")?.value && (
+      {title && getSettingValue("product-reviews", "headlines") && (
         <div className="section-headlines">
           <h1>{title}</h1>
           <p>{subtitle}</p>
@@ -54,7 +54,11 @@ const ProductsReviews: React.FC<ReviewDefinition> = ({
                 {[...Array(5)].map((_, i) => (
                   <Icon
                     key={i}
-                    name={i + 1 > review.rating ? "star_outline" : "star_solid"}
+                    name={
+                      i + 1 > Number(review.rating)
+                        ? "star_outline"
+                        : "star_solid"
+                    }
                   />
                 ))}
               </div>

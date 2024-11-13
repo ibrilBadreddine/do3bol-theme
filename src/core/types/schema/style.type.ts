@@ -1,9 +1,7 @@
-export interface SectionDefinition {
-  id: AvailableSections;
-  description: string;
-  is_visible: boolean;
+export interface StyleDefinition {
+  id: AvailableStyles;
   settings: Setting[];
-  type: "sections"
+  type: "styles";
 }
 
 interface BaseSetting {
@@ -12,7 +10,7 @@ interface BaseSetting {
   type: string;
 }
 
-export type Setting = SwitchSetting<boolean> | SelectSetting<string>;
+export type Setting = SelectSetting<string>;
 
 export interface SwitchSetting<T> extends BaseSetting {
   type: "switch";
@@ -25,16 +23,9 @@ export interface SelectSetting<T> extends BaseSetting {
   value: T;
 }
 
-export type AvailableSections =
-  | "box"
-  | "slider"
-  | "content"
-  | "collections"
-  | "product-list"
-  | "product-reviews";
+export type AvailableStyles = "language" | "colors" | "radius";
 
 interface Option<T> {
   label: string;
   value: T;
-  icon?: "fit" | "full";
 }

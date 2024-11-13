@@ -14,25 +14,23 @@ const ProductsList: React.FC<ListDefinition> = ({
 }) => {
   const location = useLocation();
   const { t } = useTranslation();
-  const { getSetting } = useCustom();
+  const { getSettingValue } = useCustom();
 
   return (
     <div className="products-list-container">
-      {title && getSetting("product-list", "headlines")?.value && (
+      {title && getSettingValue("product-list", "headlines") && (
         <div className="section-headlines">
           <h1>{title}</h1>
           <p>{subtitle}</p>
         </div>
       )}
       <div
-        className={`products-cards ${
-          getSetting("product-list", "style")?.value
-        }`}
+        className={`products-cards ${getSettingValue("product-list", "style")}`}
         style={{ "--columns": columns, "--gap": gap }}>
         {products.map(
           (product) =>
             (product.collection_id ===
-              getSetting("product-list", "collection_id")?.value ||
+              getSettingValue("product-list", "collection_id") ||
               location.pathname.includes("collections")) && (
               <Link to="/product" key={product.id} className="prod-card">
                 <img
@@ -54,7 +52,7 @@ const ProductsList: React.FC<ListDefinition> = ({
                       </span>
                     )}
                   </div>
-                  {getSetting("product-list", "style")?.value ===
+                  {getSettingValue("product-list", "style") ===
                     "with-button" && <button className="icon">Buy now</button>}
                 </div>
               </Link>

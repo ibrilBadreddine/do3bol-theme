@@ -344,7 +344,7 @@
         },
         "general": {
           "language": "اللغة:",
-          "color": "اللون:",
+          "colors": "اللون:",
           "radius": "الحواف:"
         },
         "settings": {

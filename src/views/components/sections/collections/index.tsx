@@ -8,11 +8,11 @@ import { useCustom } from "@/core/context";
 
 export default function Collections() {
   const { t } = useTranslation();
-  const { getSetting } = useCustom();
+  const { getSettingValue } = useCustom();
 
   return (
     <div className="collections-container">
-      {getSetting("collections", "headlines")?.value && (
+      {getSettingValue("collections", "headlines") && (
         <div className="section-headlines">
           <h1>{t("sections.collections.title")}</h1>
           <p>{t("sections.collections.subtitle")}</p>

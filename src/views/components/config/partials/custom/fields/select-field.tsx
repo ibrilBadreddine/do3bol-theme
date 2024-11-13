@@ -5,29 +5,24 @@ import { useTranslation } from "react-i18next";
 
 const SelectField: React.FC<SelectSetting<string>> = (setting) => {
   const { t } = useTranslation();
-  const { theme, setSetting } = useCustom();
+  const { setSetting } = useCustom();
 
-  const currentSection = theme.sections.find(
-    (sec) => sec.id === theme.selected_item
-  );
   return (
-    currentSection && (
-      <div className="field field-select" key={setting.id}>
-        <label>{t(`components.config.custom.settings.${setting.id}`)}</label>
-        <div className="select-tabs">
-          {setting.options.map((opt) => (
-            <button
-              key={opt.value}
-              className="icon"
-              data-active={setting.value === opt.value}
-              onClick={() => setSetting(currentSection, setting.id, opt.value)}>
-              {opt.icon && <Icon name={opt.icon} />}
-              {t(`components.config.custom.settings.options.${opt.value}`)}
-            </button>
-          ))}
-        </div>
+    <div className="field field-select" key={setting.id}>
+      <label>{t(`components.config.custom.settings.${setting.id}`)}</label>
+      <div className="select-tabs">
+        {setting.options.map((opt) => (
+          <button
+            key={opt.value}
+            className="icon"
+            data-active={setting.value === opt.value}
+            onClick={() => setSetting(setting.id, opt.value)}>
+            {opt.icon && <Icon name={opt.icon} />}
+            {t(`components.config.custom.settings.options.${opt.value}`)}
+          </button>
+        ))}
       </div>
-    )
+    </div>
   );
 };
 

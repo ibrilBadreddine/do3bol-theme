@@ -18,7 +18,7 @@ const Slider: React.FC<SliderDefinition> = ({
   height = "500px",
 }) => {
   const { t, i18n } = useTranslation();
-  const { getSetting } = useCustom();
+  const { getSettingValue } = useCustom();
 
   const ITEMS = [SliderV1, SliderV2, SliderV3];
 
@@ -41,7 +41,7 @@ const Slider: React.FC<SliderDefinition> = ({
     <div
       className="slider-container"
       data-orientation={IS_VERTICAL ? "vertical" : "horizontal"}
-      data-style={getSetting("slider", "style")?.value}
+      data-style={getSettingValue("slider", "style")}
       style={{
         "--per-page": PER_PAGE,
         "--gap": 10,
@@ -65,7 +65,7 @@ const Slider: React.FC<SliderDefinition> = ({
                   alt={`Slide ${i}`}
                   loading="lazy"
                 />
-                {content && getSetting("slider", "show_content")?.value && (
+                {content && getSettingValue("slider", "show_content") && (
                   <div className="item-content">
                     <p>{t("sections.slider.title")}</p>
                     <Link to="collections/" className="link-btn secondary">
